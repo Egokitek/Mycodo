@@ -99,7 +99,7 @@ def send_note_attachment(filename):
 @blueprint.route('/camera/<camera_unique_id>/<img_type>/<filename>')
 @flask_login.login_required
 def camera_img_return_path(camera_unique_id, img_type, filename):
-    """Return an image from stills or timelapses"""
+    """Return an image from stills or time-lapses"""
     camera = Camera.query.filter(Camera.unique_id == camera_unique_id).first()
     camera_path = assure_path_exists(
         os.path.join(PATH_CAMERAS, '{uid}'.format(uid=camera.unique_id)))
@@ -121,7 +121,7 @@ def camera_img_return_path(camera_unique_id, img_type, filename):
 @blueprint.route('/camera_acquire_image/<image_type>/<camera_unique_id>/<max_age>')
 @flask_login.login_required
 def camera_img_acquire(image_type, camera_unique_id, max_age):
-    """Capture an image and resturn the filename"""
+    """Capture an image and return the filename"""
     if image_type == 'new':
         tmp_filename = None
     elif image_type == 'tmp':
