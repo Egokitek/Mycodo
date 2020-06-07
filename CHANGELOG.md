@@ -1,3 +1,10 @@
+## 8.5.5 (Unreleased)
+
+### Bugfixes
+
+ - Prevent user with insufficient permissions from rearranging dashboard widgets
+
+
 ## 8.5.4 (2020-06-06)
 
 ### Bugfixes

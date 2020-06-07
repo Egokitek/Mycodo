@@ -182,7 +182,7 @@ class InputModule(AbstractInput):
             else:
                 self.logger.error("Bad response")
         except:
-            self.logger.exception()
+            self.logger.exception("get_measurement()")
         finally:
             self.measuring = False
 

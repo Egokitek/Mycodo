@@ -77,9 +77,6 @@ class InputModule(AbstractInput):
 
             temp = self.sensor.calculateTemperature()
 
-            if self.is_enabled(2):
-                self.value_set(2, temp)
-
             if not self.sensor.readData():
 
                 if self.is_enabled(0):
@@ -87,6 +84,9 @@ class InputModule(AbstractInput):
 
                 if self.is_enabled(1):
                     self.value_set(1, self.sensor.getTVOC())
+
+                if self.is_enabled(2):
+                    self.value_set(2, temp)
 
             else:
                 self.logger.error("Sensor error")

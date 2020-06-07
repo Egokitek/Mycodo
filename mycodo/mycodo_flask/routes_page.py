@@ -515,6 +515,8 @@ def page_export():
 @blueprint.route('/save_dashboard_layout', methods=['POST'])
 def save_dashboard_layout():
     """Save positions and sizes of widgets of a particular dashboard"""
+    if not utils_general.user_has_permission('edit_controllers'):
+        return redirect(url_for('routes_general.home'))
     data = request.get_json()
     keys = ('widget_id', 'position_x', 'position_y', 'width', 'height')
     for index, each_widget in enumerate(data):
