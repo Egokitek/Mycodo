@@ -95,15 +95,15 @@ Prerequisites
 ~~~~~~~~~~~~~
 
 -  `Raspberry Pi <https://www.raspberrypi.org>`__ single-board computer (any version: Zero, 1, 2, 3, or 4)
--  `Raspbian OS <https://www.raspberrypi.org/downloads/raspbian/>`__ flashed to a micro SD card
+-  `Raspberry Pi Operating System <https://www.raspberrypi.org/downloads/raspberry-pi-os/>`__ flashed to a micro SD card
 -  An active internet connection
 
-Mycodo has been tested to work with Raspbian Buster Lite (2019-09-26).
+Mycodo has been tested to work with Raspberry Pi OS Lite (2020-05-27).
 
 Install
 ~~~~~~~
 
-Once you have the Raspberry Pi booted into Raspbian with an internet
+Once you have the Raspberry Pi booted into the Raspberry Pi OS with an internet
 connection, run the following command in a terminal to initiate the
 Mycodo install:
 
