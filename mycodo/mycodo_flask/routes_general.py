@@ -317,6 +317,9 @@ def last_data(unique_id, measure_type, measurement_id, period):
         except KeyError:
             logger.debug("No Data returned form influxdb")
             return '', 204
+        except IndexError:
+            logger.debug("No Data returned form influxdb")
+            return '', 204
         except Exception as e:
             logger.exception("URL for 'last_data' raised and error: "
                              "{err}".format(err=e))

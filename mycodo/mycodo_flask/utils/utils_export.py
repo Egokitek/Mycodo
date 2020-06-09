@@ -354,7 +354,7 @@ def thread_import_influxdb(tmp_folder):
 
     # Restore the backup to new database mycodo_db_bak
     try:
-        logger.info("Beginning restore. This could take a while...")
+        logger.info("Creating tmp db with restore data")
         output_successes = []
         command = "{pth}/mycodo/scripts/mycodo_wrapper " \
                   "influxdb_restore_mycodo_db {dir}".format(
@@ -372,14 +372,17 @@ def thread_import_influxdb(tmp_folder):
 
     # Copy all measurements from backup to current database
     try:
+        logger.info("Beginning restore of data from tmp db to main db. This could take a while...")
         query_str = "SELECT * INTO {}..:MEASUREMENT FROM /.*/ GROUP BY *".format(
             INFLUXDB_DATABASE)
         client.query(query_str)
-    except Exception:
+        logger.info("Restore of data from tmp db complete.")
+    except Exception as msg:
         logger.info("Error during copy of measurements from backup db to production db: {}".format(msg))
 
     # Delete backup database
     try:
+        logger.info("Deleting tmp db")
         client.drop_database(mycodo_db_backup)
     except Exception as msg:
         logger.info("Error while deleting db after restore: {}".format(msg))
