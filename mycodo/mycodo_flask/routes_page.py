@@ -482,17 +482,15 @@ def page_export():
         elif form_import_influxdb.influxdb_import_upload.data:
             restore_influxdb = utils_export.import_influxdb(
                 form_import_influxdb)
-            if restore_influxdb:
+            if restore_influxdb == 'success':
                 flash('The influxdb database import has been initialized. '
                       'This process may take an extended time to complete '
                       'if there is a lot of data. Please allow ample time '
                       'for it to complete.',
                       'success')
-                return redirect(url_for('routes_authentication.logout'))
             else:
-                flash(
-                    'An error occurred during the influxdb database import.',
-                    'error')
+                flash('Errors occurred during the influxdb database import.',
+                      'error')
 
     # Generate start end end times for date/time picker
     end_picker = datetime.datetime.now().strftime('%m/%d/%Y %H:%M')

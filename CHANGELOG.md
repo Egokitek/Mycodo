@@ -4,6 +4,7 @@
 
  - Prevent user with insufficient permissions from rearranging dashboard widgets
  - Fix installing internal dependencies
+ - Fix restore of influxdb measurement data from import/Export page
 
 
 ## 8.5.4 (2020-06-06)
