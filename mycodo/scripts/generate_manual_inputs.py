@@ -91,7 +91,10 @@ with open(save_path, 'w') as out_file:
             if 'url_manufacturer' in each_data and each_data['url_manufacturer']:
                 out_file.write("| Manufacturer URL(s): ")
                 for i, each_url in enumerate(each_data['url_manufacturer']):
-                    out_file.write("`Link {num} <{url}>`__".format(num=i + 1, url=each_url))
+                    if len(each_data['url_manufacturer']) == 1:
+                        out_file.write("`Link <{}>`__".format(each_url))
+                    else:
+                        out_file.write("`Link {num} <{url}>`__".format(num=i + 1, url=each_url))
                     if i + 1 < len(each_data['url_manufacturer']):
                         out_file.write(", ")
                     else:
@@ -100,7 +103,10 @@ with open(save_path, 'w') as out_file:
             if 'url_datasheet' in each_data and each_data['url_datasheet']:
                 out_file.write("| Datasheet URL(s): ")
                 for i, each_url in enumerate(each_data['url_datasheet']):
-                    out_file.write("`Link {num} <{url}>`__".format(num=i + 1, url=each_url))
+                    if len(each_data['url_datasheet']) == 1:
+                        out_file.write("`Link <{}>`__".format(each_url))
+                    else:
+                        out_file.write("`Link {num} <{url}>`__".format(num=i + 1, url=each_url))
                     if i + 1 < len(each_data['url_datasheet']):
                         out_file.write(", ")
                     else:
@@ -109,7 +115,10 @@ with open(save_path, 'w') as out_file:
             if 'url_product_purchase' in each_data and each_data['url_product_purchase']:
                 out_file.write("| Product URL(s): ")
                 for i, each_url in enumerate(each_data['url_product_purchase']):
-                    out_file.write("`Link {num} <{url}>`__".format(num=i + 1, url=each_url))
+                    if len(each_data['url_product_purchase']) == 1:
+                        out_file.write("`Link <{}>`__".format(each_url))
+                    else:
+                        out_file.write("`Link {num} <{url}>`__".format(num=i + 1, url=each_url))
                     if i + 1 < len(each_data['url_product_purchase']):
                         out_file.write(", ")
                     else:
