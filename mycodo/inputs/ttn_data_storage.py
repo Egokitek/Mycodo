@@ -41,11 +41,12 @@ measurements_dict = {}
 # Input information
 INPUT_INFORMATION = {
     'input_name_unique': 'TTN_DATA_STORAGE',
-    'input_manufacturer': 'The Things Network',
-    'input_name': 'TTN Integration: Data Storage',
+    'input_manufacturer': 'Mycodo',
+    'input_name': 'The Things Network Integration: Data Storage',
     'input_library': 'pypi requests',
     'measurements_name': 'Variable measurements',
     'measurements_dict': measurements_dict,
+
     'measurements_variable_amount': True,
     'measurements_use_same_timestamp': False,
 

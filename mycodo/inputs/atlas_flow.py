@@ -99,7 +99,7 @@ INPUT_INFORMATION = {
     'url_manufacturer': 'https://www.atlas-scientific.com/flow/',
     'url_datasheet': 'https://www.atlas-scientific.com/files/flow_EZO_Datasheet.pdf',
 
-    'message': 'Note: Set the Measurement Time Base to a value most appropriate for your anticipated flow (it will affect accuracy). This flow rate time base that is set and returned from the sensor will be converted to liters per minute, which is the default unit for this input module. If you desire a different rate to be stored in the database (such as liters per second or hour), then use the Convert to Unit option.',
+    'message': 'Set the Measurement Time Base to a value most appropriate for your anticipated flow (it will affect accuracy). This flow rate time base that is set and returned from the sensor will be converted to liters per minute, which is the default unit for this input module. If you desire a different rate to be stored in the database (such as liters per second or hour), then use the Convert to Unit option.',
 
     'options_enabled': [
         'ftdi_location',
