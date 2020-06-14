@@ -555,10 +555,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="contents">
 
 </div>
-<div class="contents">
-</div>
-<div class="contents">
-</div>
 <h1 id="about-mycodo">About Mycodo</h1>
 <p>Mycodo is an automated monitoring and regulation system that was built to run on the <a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi</a>.</p>
 <p>Originally developed for cultivating edible mushrooms, Mycodo has grown to do much more. The system comprises a backend (daemon) and a frontend (web server). The backend acquires measurements from sensors and devices, and coordinates a diverse set of responses to those measurements, including the ability to modulate outputs (relays, PWM, pumps, wireless outlets, etc.), regulate environmental conditions with electrical devices under PID control (steady regulation or changing over time), schedule timers, capture photos and stream video, trigger actions when measurements meet certain conditions (modulate relays, execute commands, notify by email, etc.), and more. The frontend is a web interface that enables easy navigation and configuration from any browser-enabled device.</p>
@@ -3441,7 +3437,7 @@ a</code></pre>
 <p>Check out the <a href="https://github.com/kizniche/Mycodo/wiki/Diagnosing-Issues">Diagnosing Mycodo Issues Wiki Page</a> on github for more information about diagnosing issues.</p>
 <h1 id="devices">Devices</h1>
 <h2 id="input-devices">Input Devices</h2>
-<p>Supported Input and Output devices are listed below.</p>
+<p>Supported Input devices are listed below.</p>
 <h3 id="built-in-inputs-system-specific">Built-In Inputs (System-Specific)</h3>
 <h4 id="linux-bash-command">Linux: Bash Command</h4>
 <div class="line-block">Measurements: Return Value</div>
@@ -3450,119 +3446,122 @@ a</code></pre>
 <div class="line-block">Measurements: Store Value(s)</div>
 <h4 id="mycodo-mqtt-protocol-paho">Mycodo: MQTT Protocol (paho)</h4>
 <div class="line-block">Measurements: Variable measurements<br />
-Libraries: Input Module 1: pypi paho-mqtt</div>
+Libraries: pypi paho-mqtt</div>
 <h4 id="mycodo-mycodo-ram">Mycodo: Mycodo RAM</h4>
 <div class="line-block">Measurements: Size RAM in Use<br />
-Libraries: Input Module 1: py resource.getrusage()</div>
+Libraries: py resource.getrusage()</div>
 <h4 id="mycodo-mycodo-version">Mycodo: Mycodo Version</h4>
 <div class="line-block">Measurements: Version as Major.Minor.Revision</div>
+<h4 id="mycodo-the-things-network-integration-data-storage">Mycodo: The Things Network Integration: Data Storage</h4>
+<div class="line-block">Measurements: Variable measurements<br />
+Libraries: pypi requests</div>
 <h4 id="raspberry-pi-cpugpu-temperature">Raspberry Pi: CPU/GPU Temperature</h4>
 <div class="line-block">Measurements: Temperature</div>
 <h4 id="raspberry-pi-edge">Raspberry Pi: Edge</h4>
 <div class="line-block">Measurements: Rising/Falling Edge<br />
-Libraries: Input Module 1: pypi RPi.GPIO</div>
+Libraries: pypi RPi.GPIO</div>
 <h4 id="raspberry-pi-gpio-state">Raspberry Pi: GPIO State</h4>
 <div class="line-block">Measurements: GPIO State<br />
-Libraries: Input Module 1: pypi RPi.GPIO</div>
+Libraries: pypi RPi.GPIO</div>
 <h4 id="raspberry-pi-signal-pwm">Raspberry Pi: Signal (PWM)</h4>
 <div class="line-block">Measurements: Frequency/Pulse Width/Duty Cycle<br />
-Libraries: Input Module 1: pigpio</div>
+Libraries: pigpio</div>
 <h4 id="raspberry-pi-signal-revolutions">Raspberry Pi: Signal (Revolutions)</h4>
 <div class="line-block">Measurements: RPM<br />
-Libraries: Input Module 1: pigpio</div>
+Libraries: pigpio</div>
 <h4 id="system-cpu-load">System: CPU Load</h4>
 <div class="line-block">Measurements: CPULoad<br />
-Libraries: Input Module 1: py os.getloadavg()</div>
+Libraries: py os.getloadavg()</div>
 <h4 id="system-free-space">System: Free Space</h4>
 <div class="line-block">Measurements: Unallocated Disk Space<br />
-Libraries: Input Module 1: py os.statvfs()</div>
+Libraries: py os.statvfs()</div>
 <h4 id="system-server-ping">System: Server Ping</h4>
 <div class="line-block">Measurements: Boolean<br />
-Libraries: Input Module 1: bash ping</div>
+Libraries: bash ping</div>
 <p>This Input executes the bash command &quot;ping -c [times] -w [deadline] [host]&quot; to determine if the host can be pinged.</p>
 <h4 id="system-server-port-open">System: Server Port Open</h4>
 <div class="line-block">Measurements: Boolean<br />
-Libraries: Input Module 1: bash nc</div>
+Libraries: bash nc</div>
 <p>This Input executes the bash command &quot;nc -zv [host] [port]&quot; to determine if the host at a particular port is accessible.</p>
 <h3 id="built-in-inputs-sensors">Built-In Inputs (Sensors)</h3>
 <h4 id="ams-as7262">AMS: AS7262</h4>
 <div class="line-block">Measurements: Light at 450, 500, 550, 570, 600, 650 nm<br />
-Libraries: Input Module 1: pypi as7262<br />
+Libraries: pypi as7262<br />
 Manufacturer URL(s): <a href="https://ams.com/as7262">Link 1</a><br />
 Datasheet URL(s): <a href="https://ams.com/documents/20143/36005/AS7262_DS000486_2-00.pdf/0031f605-5629-e030-73b2-f365fd36a43b">Link 1</a><br />
 Product URL(s): <a href="https://www.sparkfun.com/products/14347">Link 1</a></div>
 <h4 id="ams-ccs811">AMS: CCS811</h4>
 <div class="line-block">Measurements: CO2/VOC/Temperature<br />
-Libraries: Input Module 1: pypi Adafruit_CCS811<br />
+Libraries: pypi Adafruit_CCS811<br />
 Manufacturer URL(s): <a href="https://www.sciosense.com/products/environmental-sensors/ccs811-gas-sensor-solution/">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.sciosense.com/wp-content/uploads/2020/01/CCS811-Datasheet.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/3566">Link 1</a>, <a href="https://www.sparkfun.com/products/14193">Link 2</a></div>
 <h4 id="ams-tsl2561">AMS: TSL2561</h4>
 <div class="line-block">Measurements: Light<br />
-Libraries: Input Module 1: pypi tsl2561<br />
+Libraries: pypi tsl2561<br />
 Manufacturer URL(s): <a href="https://ams.com/tsl2561">Link 1</a><br />
 Datasheet URL(s): <a href="https://ams.com/documents/20143/36005/TSL2561_DS000110_3-00.pdf/18a41097-2035-4333-c70e-bfa544c0a98b">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/439">Link 1</a></div>
 <h4 id="ams-tsl2591">AMS: TSL2591</h4>
 <div class="line-block">Measurements: Light<br />
-Libraries: Input Module 1: git maxlklaxl/python-tsl2591<br />
+Libraries: git maxlklaxl/python-tsl2591<br />
 Manufacturer URL(s): <a href="https://ams.com/tsl25911">Link 1</a><br />
 Datasheet URL(s): <a href="https://ams.com/documents/20143/36005/TSL2591_DS000338_6-00.pdf/090eb50d-bb18-5b45-4938-9b3672f86b80">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/1980">Link 1</a></div>
 <h4 id="aosong-am2315am2320">AOSONG: AM2315/AM2320</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: pypi quick2wire-api<br />
+Libraries: pypi quick2wire-api<br />
 Datasheet URL(s): <a href="https://cdn-shop.adafruit.com/datasheets/AM2315.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/1293">Link 1</a></div>
 <h4 id="aosong-dht11">AOSONG: DHT11</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: pigpio<br />
+Libraries: pigpio<br />
 Datasheet URL(s): <a href="http://www.adafruit.com/datasheets/DHT11-chinese.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/386">Link 1</a></div>
 <h4 id="aosong-dht22">AOSONG: DHT22</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: pigpio<br />
+Libraries: pigpio<br />
 Datasheet URL(s): <a href="http://www.adafruit.com/datasheets/DHT22.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/385">Link 1</a></div>
 <h4 id="atlas-scientific-do">Atlas Scientific: DO</h4>
 <div class="line-block">Measurements: Dissolved Oxygen<br />
-Libraries: Input Module 1: pypi pylibftdi/fcntl/io/serial<br />
+Libraries: pypi pylibftdi/fcntl/io/serial<br />
 Manufacturer URL(s): <a href="https://www.atlas-scientific.com/dissolved-oxygen.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.atlas-scientific.com/files/DO_EZO_Datasheet.pdf">Link 1</a></div>
 <h4 id="atlas-scientific-ec">Atlas Scientific: EC</h4>
 <div class="line-block">Measurements: Electrical Conductivity<br />
-Libraries: Input Module 1: pypi pylibftdi/fcntl/io/serial<br />
+Libraries: pypi pylibftdi/fcntl/io/serial<br />
 Manufacturer URL(s): <a href="https://www.atlas-scientific.com/conductivity/">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.atlas-scientific.com/files/EC_EZO_Datasheet.pdf">Link 1</a></div>
 <h4 id="atlas-scientific-flow-meter">Atlas Scientific: Flow Meter</h4>
 <div class="line-block">Measurements: Total Volume, Flow Rate<br />
-Libraries: Input Module 1: pypi pylibftdi/fcntl/io/serial<br />
+Libraries: pypi pylibftdi/fcntl/io/serial<br />
 Manufacturer URL(s): <a href="https://www.atlas-scientific.com/flow/">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.atlas-scientific.com/files/flow_EZO_Datasheet.pdf">Link 1</a></div>
-<p>Note: Set the Measurement Time Base to a value most appropriate for your anticipated flow (it will affect accuracy). This flow rate time base that is set and returned from the sensor will be converted to liters per minute, which is the default unit for this input module. If you desire a different rate to be stored in the database (such as liters per second or hour), then use the Convert to Unit option.</p>
+<p>Set the Measurement Time Base to a value most appropriate for your anticipated flow (it will affect accuracy). This flow rate time base that is set and returned from the sensor will be converted to liters per minute, which is the default unit for this input module. If you desire a different rate to be stored in the database (such as liters per second or hour), then use the Convert to Unit option.</p>
 <h4 id="atlas-scientific-orp">Atlas Scientific: ORP</h4>
 <div class="line-block">Measurements: Oxidation Reduction Potential<br />
-Libraries: Input Module 1: pypi pylibftdi/fcntl/io/serial<br />
+Libraries: pypi pylibftdi/fcntl/io/serial<br />
 Manufacturer URL(s): <a href="https://www.atlas-scientific.com/orp/">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.atlas-scientific.com/files/ORP_EZO_Datasheet.pdf">Link 1</a></div>
 <h4 id="atlas-scientific-pt-1000">Atlas Scientific: PT-1000</h4>
 <div class="line-block">Measurements: Temperature<br />
-Libraries: Input Module 1: pypi pylibftdi/fcntl/io/serial<br />
+Libraries: pypi pylibftdi/fcntl/io/serial<br />
 Manufacturer URL(s): <a href="https://www.atlas-scientific.com/temperature/">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.atlas-scientific.com/files/EZO_RTD_Datasheet.pdf">Link 1</a></div>
 <h4 id="atlas-scientific-pressure">Atlas Scientific: Pressure</h4>
 <div class="line-block">Measurements: Pressure<br />
-Libraries: Input Module 1: pypi pylibftdi/fcntl/io/serial<br />
+Libraries: pypi pylibftdi/fcntl/io/serial<br />
 Manufacturer URL(s): <a href="https://www.atlas-scientific.com/pressure/">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.atlas-scientific.com/files/EZO-PRS-Datasheet.pdf">Link 1</a></div>
 <h4 id="atlas-scientific-rgb-color">Atlas Scientific: RGB Color</h4>
 <div class="line-block">Measurements: RGB, CIE, LUX, Proximity<br />
-Libraries: Input Module 1: pypi pylibftdi/fcntl/io/serial<br />
+Libraries: pypi pylibftdi/fcntl/io/serial<br />
 Manufacturer URL(s): <a href="https://www.atlas-scientific.com/ezo-rgb/">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.atlas-scientific.com/files/EZO_RGB_Datasheet.pdf">Link 1</a></div>
 <h4 id="atlas-scientific-ph">Atlas Scientific: pH</h4>
 <div class="line-block">Measurements: Ion Concentration<br />
-Libraries: Input Module 1: pypi pylibftdi/fcntl/io/serial<br />
+Libraries: pypi pylibftdi/fcntl/io/serial<br />
 Manufacturer URL(s): <a href="https://www.atlas-scientific.com/ph/">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.atlas-scientific.com/files/pH_EZO_Datasheet.pdf">Link 1</a></div>
 <p>Calibration Measurement is an optional setting that provides a temperature measurement (in Celsius) of the water that the pH is being measured from.</p>
@@ -3574,43 +3573,43 @@ Datasheet URL(s): <a href="https://www.bosch-sensortec.com/media/boschsensortec/
 Product URL(s): <a href="https://www.adafruit.com/product/2652">Link 1</a>, <a href="https://www.sparkfun.com/products/13676">Link 2</a></div>
 <h4 id="bosch-bme680">BOSCH: BME680</h4>
 <div class="line-block">Measurements: Temperature/Humidity/Pressure/Gas<br />
-Libraries: Input Module 1: pypi bme680<br />
+Libraries: pypi bme680<br />
 Manufacturer URL(s): <a href="https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors-bme680/">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/3660">Link 1</a>, <a href="https://www.sparkfun.com/products/16466">Link 2</a></div>
 <h4 id="bosch-bmp180">BOSCH: BMP180</h4>
 <div class="line-block">Measurements: Pressure/Temperature<br />
-Libraries: Input Module 1: pypi Adafruit_BMP<br />
+Libraries: pypi Adafruit_BMP<br />
 Datasheet URL(s): <a href="https://ae-bst.resource.bosch.com/media/_tech/media/product_flyer/BST-BMP180-FL000.pdf">Link 1</a></div>
 <h4 id="bosch-bmp280">BOSCH: BMP280</h4>
 <div class="line-block">Measurements: Pressure/Temperature<br />
-Libraries: Input Module 1: pypi Adafruit_GPIO<br />
+Libraries: pypi Adafruit_GPIO<br />
 Manufacturer URL(s): <a href="https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/pressure-sensors-bmp280-1.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/2651">Link 1</a></div>
 <h4 id="co2meter-k30">CO2Meter: K30</h4>
 <div class="line-block">Measurements: CO2<br />
-Libraries: Input Module 1: pypi serial<br />
+Libraries: pypi serial<br />
 Manufacturer URL(s): <a href="https://www.co2meter.com/products/k-30-co2-sensor-module">Link 1</a><br />
 Datasheet URL(s): <a href="http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf">Link 1</a></div>
 <h4 id="catnip-electronics-chirp">Catnip Electronics: Chirp</h4>
 <div class="line-block">Measurements: Light/Moisture/Temperature<br />
-Libraries: Input Module 1: pypi smbus2<br />
+Libraries: pypi smbus2<br />
 Manufacturer URL(s): <a href="https://wemakethings.net/chirp/">Link 1</a><br />
 Product URL(s): <a href="https://www.tindie.com/products/miceuz/chirp-plant-watering-alarm/">Link 1</a></div>
 <h4 id="cozir-cozir-co2">Cozir: Cozir CO2</h4>
 <div class="line-block">Measurements: CO2/Humidity/Temperature<br />
-Libraries: Input Module 1: git pierre-haessig/pycozir<br />
+Libraries: git pierre-haessig/pycozir<br />
 Manufacturer URL(s): <a href="https://www.co2meter.com/products/cozir-2000-ppm-co2-sensor">Link 1</a><br />
 Datasheet URL(s): <a href="https://cdn.shopify.com/s/files/1/0019/5952/files/Datasheet_COZIR_A_CO2Meter_4_15.pdf">Link 1</a></div>
 <h4 id="maxim-ds1822">MAXIM: DS1822</h4>
 <div class="line-block">Measurements: Temperature<br />
-Libraries: Input Module 1: pypi w1thermsensor<br />
+Libraries: pypi w1thermsensor<br />
 Manufacturer URL(s): <a href="https://www.maximintegrated.com/en/products/sensors/DS1822.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://datasheets.maximintegrated.com/en/ds/DS1822.pdf">Link 1</a></div>
 <h4 id="maxim-ds1825">MAXIM: DS1825</h4>
 <div class="line-block">Measurements: Temperature<br />
-Libraries: Input Module 1: pypi w1thermsensor<br />
+Libraries: pypi w1thermsensor<br />
 Manufacturer URL(s): <a href="https://www.maximintegrated.com/en/products/sensors/DS1825.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://datasheets.maximintegrated.com/en/ds/DS1825.pdf">Link 1</a></div>
 <h4 id="maxim-ds18b20">MAXIM: DS18B20</h4>
@@ -3621,153 +3620,150 @@ Datasheet URL(s): <a href="https://datasheets.maximintegrated.com/en/ds/DS18B20.
 Product URL(s): <a href="https://www.adafruit.com/product/374">Link 1</a>, <a href="https://www.adafruit.com/product/381">Link 2</a>, <a href="https://www.sparkfun.com/products/245">Link 3</a></div>
 <h4 id="maxim-ds18s20">MAXIM: DS18S20</h4>
 <div class="line-block">Measurements: Temperature<br />
-Libraries: Input Module 1: pypi w1thermsensor<br />
+Libraries: pypi w1thermsensor<br />
 Manufacturer URL(s): <a href="https://www.maximintegrated.com/en/products/sensors/DS18S20.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://datasheets.maximintegrated.com/en/ds/DS18S20.pdf">Link 1</a></div>
 <h4 id="maxim-ds28ea00">MAXIM: DS28EA00</h4>
 <div class="line-block">Measurements: Temperature<br />
-Libraries: Input Module 1: pypi w1thermsensor<br />
+Libraries: pypi w1thermsensor<br />
 Manufacturer URL(s): <a href="https://www.maximintegrated.com/en/products/interface/sensor-interface/DS28EA00.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://datasheets.maximintegrated.com/en/ds/DS28EA00.pdf">Link 1</a></div>
 <h4 id="maxim-max31850k">MAXIM: MAX31850K</h4>
 <div class="line-block">Measurements: Temperature<br />
-Libraries: Input Module 1: pypi w1thermsensor<br />
+Libraries: pypi w1thermsensor<br />
 Manufacturer URL(s): <a href="https://www.maximintegrated.com/en/products/sensors/MAX31850EVKIT.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://datasheets.maximintegrated.com/en/ds/MAX31850-MAX31851.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/1727">Link 1</a></div>
 <h4 id="maxim-max31855">MAXIM: MAX31855</h4>
 <div class="line-block">Measurements: Temperature (Object/Die)<br />
-Libraries: Input Module 1: pypi Adafruit_MAX31855<br />
+Libraries: pypi Adafruit_MAX31855<br />
 Manufacturer URL(s): <a href="https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31855.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://datasheets.maximintegrated.com/en/ds/MAX31855.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/269">Link 1</a></div>
 <h4 id="maxim-max31856">MAXIM: MAX31856</h4>
 <div class="line-block">Measurements: Temperature (Object/Die)<br />
-Libraries: Input Module 1: pypi RPi.GPIO<br />
+Libraries: pypi RPi.GPIO<br />
 Manufacturer URL(s): <a href="https://www.maximintegrated.com/en/products/sensors/MAX31856.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://datasheets.maximintegrated.com/en/ds/MAX31856.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/3263">Link 1</a></div>
 <h4 id="maxim-max31865">MAXIM: MAX31865</h4>
 <div class="line-block">Measurements: Temperature<br />
-Libraries: Input Module 1: pypi RPi.GPIO<br />
+Libraries: pypi RPi.GPIO<br />
 Manufacturer URL(s): <a href="https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31865.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://datasheets.maximintegrated.com/en/ds/MAX31865.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/3328">Link 1</a></div>
 <h4 id="melexis-mlx90614">Melexis: MLX90614</h4>
 <div class="line-block">Measurements: Temperature (Ambient/Object)<br />
-Libraries: Input Module 1: pypi smbus2<br />
+Libraries: pypi smbus2<br />
 Manufacturer URL(s): <a href="https://www.melexis.com/en/product/MLX90614/Digital-Plug-Play-Infrared-Thermometer-TO-Can">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.sparkfun.com/products/9570">Link 1</a></div>
 <h4 id="microchip-mcp3008">Microchip: MCP3008</h4>
 <div class="line-block">Measurements: Voltage (Analog-to-Digital Converter)<br />
-Libraries: Input Module 1: pypi Adafruit_MCP3008<br />
+Libraries: pypi Adafruit_MCP3008<br />
 Manufacturer URL(s): <a href="https://www.microchip.com/wwwproducts/en/en010530">Link 1</a><br />
 Datasheet URL(s): <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/856">Link 1</a></div>
 <h4 id="microchip-mcp342x-x234678">Microchip: MCP342x (x=2,3,4,6,7,8)</h4>
 <div class="line-block">Measurements: Voltage (Analog-to-Digital Converter)<br />
-Libraries: Input Module 1: pypi MCP342x<br />
+Libraries: pypi MCP342x<br />
 Manufacturer URL(s): <a href="https://www.microchip.com/wwwproducts/en/MCP3422">Link 1</a>, <a href="https://www.microchip.com/wwwproducts/en/MCP3423">Link 2</a>, <a href="https://www.microchip.com/wwwproducts/en/MCP3424">Link 3</a>, <a href="https://www.microchip.com/wwwproducts/en/MCP3426https://www.microchip.com/wwwproducts/en/MCP3427">Link 4</a>, <a href="https://www.microchip.com/wwwproducts/en/MCP3428">Link 5</a><br />
 Datasheet URL(s): <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/22088c.pdf">Link 1</a>, <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf">Link 2</a></div>
 <h4 id="microchip-mcp9808">Microchip: MCP9808</h4>
 <div class="line-block">Measurements: Temperature<br />
-Libraries: Input Module 1: pypi Adafruit_MCP9808<br />
+Libraries: pypi Adafruit_MCP9808<br />
 Manufacturer URL(s): <a href="https://www.microchip.com/wwwproducts/en/en556182">Link 1</a><br />
 Datasheet URL(s): <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/MCP9808-0.5C-Maximum-Accuracy-Digital-Temperature-Sensor-Data-Sheet-DS20005095B.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/1782">Link 1</a></div>
 <h4 id="panasonic-amg8833">Panasonic: AMG8833</h4>
 <div class="line-block">Measurements: 8x8 Temperature Grid<br />
-Libraries: Input Module 1: pypi Adafruit_AMG88xx/Pillow/colour</div>
+Libraries: pypi Adafruit_AMG88xx/Pillow/colour</div>
 <h4 id="rohm-bh1750">ROHM: BH1750</h4>
 <div class="line-block">Measurements: Light<br />
-Libraries: Input Module 1: pypi smbus2<br />
+Libraries: pypi smbus2<br />
 Datasheet URL(s): <a href="http://rohmfs.rohm.com/en/products/databook/datasheet/ic/sensor/light/bh1721fvc-e.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.dfrobot.com/product-531.html">Link 1</a></div>
 <h4 id="ruuvi-ruuvitag">Ruuvi: RuuviTag</h4>
 <div class="line-block">Measurements: Acceleration/Humidity/Pressure/Temperature<br />
-Libraries: Input Module 1: pypi ruuvitag_sensor<br />
+Libraries: pypi ruuvitag_sensor<br />
 Manufacturer URL(s): <a href="https://ruuvi.com/">Link 1</a><br />
 Datasheet URL(s): <a href="https://ruuvi.com/files/ruuvitag-tech-spec-2019-7.pdf">Link 1</a></div>
 <h4 id="stmicroelectronics-vl53l0x">STMicroelectronics: VL53L0X</h4>
 <div class="line-block">Measurements: Millimeter (Time-of-Flight Distance)<br />
-Libraries: Input Module 1: git grantramsay/VL53L0X_rasp_python<br />
+Libraries: git grantramsay/VL53L0X_rasp_python<br />
 Manufacturer URL(s): <a href="https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.st.com/resource/en/datasheet/vl53l0x.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/3317">Link 1</a>, <a href="https://www.pololu.com/product/2490">Link 2</a></div>
 <h4 id="sensirion-sht1x7x">Sensirion: SHT1x/7x</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: pypi sht_sensor<br />
+Libraries: pypi sht_sensor<br />
 Manufacturer URL(s): <a href="https://www.sensirion.com/en/environmental-sensors/humidity-sensors/digital-humidity-sensors-for-accurate-measurements/">Link 1</a>, <a href="https://www.sensirion.com/en/environmental-sensors/humidity-sensors/pintype-digital-humidity-sensors/">Link 2</a></div>
 <h4 id="sensirion-sht2x">Sensirion: SHT2x</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: pypi smbus2<br />
+Libraries: pypi smbus2<br />
 Manufacturer URL(s): <a href="https://www.sensirion.com/en/environmental-sensors/humidity-sensors/humidity-temperature-sensor-sht2x-digital-i2c-accurate/">Link 1</a></div>
 <h4 id="sensirion-sht3x-30-31-35">Sensirion: SHT3x (30, 31, 35)</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: pypi Adafruit_SHT31<br />
+Libraries: pypi Adafruit_SHT31<br />
 Manufacturer URL(s): <a href="https://www.sensirion.com/en/environmental-sensors/humidity-sensors/digital-humidity-sensors-for-various-applications/">Link 1</a></div>
 <h4 id="sensorion-sht31-smart-gadget">Sensorion: SHT31 Smart Gadget</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: pypi bluepy<br />
+Libraries: pypi bluepy<br />
 Manufacturer URL(s): <a href="https://www.sensirion.com/en/environmental-sensors/humidity-sensors/development-kit/">Link 1</a></div>
 <h4 id="sonoff-th1610-tasmota-firmware-with-am2301">Sonoff: TH16/10 (Tasmota firmware) with AM2301</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: pypi requests<br />
+Libraries: pypi requests<br />
 Manufacturer URL(s): <a href="https://sonoff.tech/product/wifi-diy-smart-switches/th10-th16">Link 1</a></div>
 <h4 id="sonoff-th1610-tasmota-firmware-with-ds18b20">Sonoff: TH16/10 (Tasmota firmware) with DS18B20</h4>
 <div class="line-block">Measurements: Temperature<br />
-Libraries: Input Module 1: pypi requests<br />
+Libraries: pypi requests<br />
 Manufacturer URL(s): <a href="https://sonoff.tech/product/wifi-diy-smart-switches/th10-th16">Link 1</a></div>
 <h4 id="te-connectivity-htu21d">TE Connectivity: HTU21D</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: pigpio<br />
+Libraries: pigpio<br />
 Manufacturer URL(s): <a href="https://www.te.com/usa-en/product-CAT-HSC0004.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&amp;DocId=Data+Sheet%7FHPC199_6%7FA6%7Fpdf%7FEnglish%7FENG_DS_HPC199_6_A6.pdf%7FCAT-HSC0004">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/1899">Link 1</a></div>
 <h4 id="texas-instruments-ads1256">Texas Instruments: ADS1256</h4>
 <div class="line-block">Measurements: Voltage (Waveshare, Analog-to-Digital Converter)<br />
-Libraries: Input Module 1: pypi wiringpi, git kizniche/PiPyADC-py3</div>
+Libraries: pypi wiringpi, git kizniche/PiPyADC-py3</div>
 <h4 id="texas-instruments-ads1x15">Texas Instruments: ADS1x15</h4>
 <div class="line-block">Measurements: Voltage (Analog-to-Digital Converter)<br />
-Libraries: Input Module 1: pypi Adafruit_ADS1x15</div>
+Libraries: pypi Adafruit_ADS1x15</div>
 <h4 id="texas-instruments-hdc1000">Texas Instruments: HDC1000</h4>
 <div class="line-block">Measurements: Humidity/Temperature<br />
-Libraries: Input Module 1: py fcntl/io<br />
+Libraries: py fcntl/io<br />
 Manufacturer URL(s): <a href="https://www.ti.com/product/HDC1000">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.ti.com/lit/ds/symlink/hdc1000.pdf">Link 1</a></div>
 <h4 id="texas-instruments-tmp006">Texas Instruments: TMP006</h4>
 <div class="line-block">Measurements: Temperature (Object/Die)<br />
-Libraries: Input Module 1: pypi Adafruit_TMP<br />
+Libraries: pypi Adafruit_TMP<br />
 Datasheet URL(s): <a href="http://www.adafruit.com/datasheets/tmp006.pdf">Link 1</a><br />
 Product URL(s): <a href="https://www.adafruit.com/product/1296">Link 1</a></div>
-<h4 id="the-things-network-ttn-integration-data-storage">The Things Network: TTN Integration: Data Storage</h4>
-<div class="line-block">Measurements: Variable measurements<br />
-Libraries: Input Module 1: pypi requests</div>
 <h4 id="winsen-mh-z16">Winsen: MH-Z16</h4>
 <div class="line-block">Measurements: CO2<br />
-Libraries: Input Module 1: pypi smbus2/serial<br />
+Libraries: pypi smbus2/serial<br />
 Manufacturer URL(s): <a href="https://www.winsen-sensor.com/sensors/co2-sensor/mh-z16.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.winsen-sensor.com/d/files/MH-Z16.pdf">Link 1</a></div>
 <h4 id="winsen-mh-z19">Winsen: MH-Z19</h4>
 <div class="line-block">Measurements: CO2<br />
-Libraries: Input Module 1: pypi serial<br />
+Libraries: pypi serial<br />
 Datasheet URL(s): <a href="https://www.winsen-sensor.com/d/files/PDF/Infrared%20Gas%20Sensor/NDIR%20CO2%20SENSOR/MH-Z19%20CO2%20Ver1.0.pdf">Link 1</a></div>
 <p>This is the version of the sensor that does not include the ability to conduct automatic baseline correction (ABC). See the B version of the sensor if you wish to use ABC.</p>
 <h4 id="winsen-mh-z19b">Winsen: MH-Z19B</h4>
 <div class="line-block">Measurements: CO2<br />
-Libraries: Input Module 1: pypi serial<br />
+Libraries: pypi serial<br />
 Manufacturer URL(s): <a href="https://www.winsen-sensor.com/sensors/co2-sensor/mh-z19b.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.winsen-sensor.com/d/files/MH-Z19B.pdf">Link 1</a></div>
 <p>This is the B version of the sensor that includes the ability to conduct automatic baseline correction (ABC).</p>
 <h4 id="winsen-zh03b">Winsen: ZH03B</h4>
 <div class="line-block">Measurements: Particulates<br />
-Libraries: Input Module 1: pypi serial<br />
+Libraries: pypi serial<br />
 Manufacturer URL(s): <a href="https://www.winsen-sensor.com/sensors/dust-sensor/zh3b.html">Link 1</a><br />
 Datasheet URL(s): <a href="https://www.winsen-sensor.com/d/files/ZH03B.pdf">Link 1</a></div>
 <h4 id="xiaomi-miflora">Xiaomi: Miflora</h4>
 <div class="line-block">Measurements: EC/Light/Moisture/Temperature<br />
-Libraries: Input Module 1: pypi miflora</div>
+Libraries: pypi miflora</div>
 <h3 id="i2c-multiplexers">I2C Multiplexers</h3>
 <p>NOTE: As of March, 2020, it has been discovered that the device tree overlay technique for using I2C multiplexers does not work with Raspbian Buster. It will work for Raspbian Stretch, but Mycodo will not work properly with this old version of Raspbian and will disable the API. If you do not need access to the API and do require the use of a multiplexer, it is recommended to install Raspbian Stretch prior to installing Mycodo, until a fix for Buater can be developed. For more information, see [issue #755](<a href="https://github.com/kizniche/Mycodo/issues/755" class="uri">https://github.com/kizniche/Mycodo/issues/755</a>). Alternatively, you will need to write your own Python script (or other language) to switch to the specific multiplexer channel and acquire a measurement for use with Mycodo. This script can then be executed by either the Linux Command or Python Code Input to store the measurement(s). This workaround isn't ideal, but is all there is at this point.</p>
 <p>All devices that connected to the Raspberry Pi by the I2C bus need to have a unique address in order to communicate. Some inputs may have the same address (such as the AM2315), which prevents more than one from being connected at the same time. Others may provide the ability to change the address, however the address range may be limited, which limits by how many you can use at the same time. I2C multiplexers are extremely clever and useful in these scenarios because they allow multiple sensors with the same I2C address to be connected.</p>

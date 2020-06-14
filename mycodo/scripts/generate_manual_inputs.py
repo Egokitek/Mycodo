@@ -79,7 +79,10 @@ with open(save_path, 'w') as out_file:
             if 'input_library' in each_data and each_data['input_library']:
                 out_file.write("| Libraries: ")
                 for i, each_lib in enumerate(each_data['input_library']):
-                    out_file.write("Input Module {num}: {lib}".format(num=i + 1, lib=each_lib))
+                    if len(each_data['input_library']) == 1:
+                        out_file.write(each_lib)
+                    else:
+                        out_file.write("Input Module {num}: {lib}".format(num=i + 1, lib=each_lib))
                     if i + 1 < len(each_data['input_library']):
                         out_file.write("; ")
                     else:
