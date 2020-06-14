@@ -71,13 +71,13 @@ with open(save_path, 'w') as out_file:
                 name_str += ": {}".format(each_data['input_name'])
 
             out_file.write("{}\n".format(name_str))
-            out_file.write("{}\n\n".format(repeat_to_length("^", len(name_str))))
+            out_file.write("{}\n".format(repeat_to_length("^", len(name_str))))
 
             if 'measurements_name' in each_data and each_data['measurements_name']:
-                out_file.write("Measurements: {}\n".format(each_data['measurements_name']))
+                out_file.write("\nMeasurements: {}\n".format(each_data['measurements_name']))
 
             if 'input_library' in each_data and each_data['input_library']:
-                out_file.write("Libraries: ")
+                out_file.write("\nLibraries: ")
                 for i, each_lib in enumerate(each_data['input_library']):
                     out_file.write("Input Module {num}: {lib}".format(num=i + 1, lib=each_lib))
                     if i + 1 < len(each_data['input_library']):
@@ -86,7 +86,7 @@ with open(save_path, 'w') as out_file:
                         out_file.write("\n")
 
             if 'url_manufacturer' in each_data and each_data['url_manufacturer']:
-                out_file.write("Manufacturer URL(s): ")
+                out_file.write("\nManufacturer URL(s): ")
                 for i, each_url in enumerate(each_data['url_manufacturer']):
                     out_file.write("`Link {num} <{url}>`__".format(num=i + 1, url=each_url))
                     if i + 1 < len(each_data['url_manufacturer']):
@@ -95,7 +95,7 @@ with open(save_path, 'w') as out_file:
                         out_file.write("\n")
 
             if 'url_datasheet' in each_data and each_data['url_datasheet']:
-                out_file.write("Datasheet URL(s): ")
+                out_file.write("\nDatasheet URL(s): ")
                 for i, each_url in enumerate(each_data['url_datasheet']):
                     out_file.write("`Link {num} <{url}>`__".format(num=i + 1, url=each_url))
                     if i + 1 < len(each_data['url_datasheet']):
@@ -104,7 +104,7 @@ with open(save_path, 'w') as out_file:
                         out_file.write("\n")
 
             if 'url_product_purchase' in each_data and each_data['url_product_purchase']:
-                out_file.write("Product URL(s): ")
+                out_file.write("\nProduct URL(s): ")
                 for i, each_url in enumerate(each_data['url_product_purchase']):
                     out_file.write("`Link {num} <{url}>`__".format(num=i + 1, url=each_url))
                     if i + 1 < len(each_data['url_product_purchase']):
