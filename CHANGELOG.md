@@ -6,6 +6,14 @@
  - Fix installing internal dependencies
  - Fix restore of influxdb measurement data from import/Export page
 
+### Features
+
+ - Create scripts to automatically generate Input section of manual
+
+### Miscellaneous
+
+ - Add manufacturer/datasheet/product URLs to Inputs
+
 
 ## 8.5.4 (2020-06-06)
 

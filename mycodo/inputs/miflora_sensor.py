@@ -30,6 +30,7 @@ INPUT_INFORMATION = {
     'input_name_unique': 'MIFLORA',
     'input_manufacturer': 'Xiaomi',
     'input_name': 'Miflora',
+    'input_library': 'pypi miflora',
     'measurements_name': 'EC/Light/Moisture/Temperature',
     'measurements_dict': measurements_dict,
 

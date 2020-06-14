@@ -43,6 +43,7 @@ INPUT_INFORMATION = {
     'input_name_unique': 'TTN_DATA_STORAGE',
     'input_manufacturer': 'The Things Network',
     'input_name': 'TTN Integration: Data Storage',
+    'input_library': 'pypi requests',
     'measurements_name': 'Variable measurements',
     'measurements_dict': measurements_dict,
     'measurements_variable_amount': True,

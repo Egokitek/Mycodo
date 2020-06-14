@@ -18,9 +18,16 @@ INPUT_INFORMATION = {
     'input_name_unique': 'DS18B20_OWS',
     'input_manufacturer': 'MAXIM',
     'input_name': 'DS18B20',
-    'input_library': 'ow-shell',
+    'input_library': 'apt ow-shell',
     'measurements_name': 'Temperature',
     'measurements_dict': measurements_dict,
+    'url_manufacturer': 'https://www.maximintegrated.com/en/products/sensors/DS18B20.html',
+    'url_datasheet': 'https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf',
+    'url_product_purchase': [
+        'https://www.adafruit.com/product/374',
+        'https://www.adafruit.com/product/381',
+        'https://www.sparkfun.com/products/245'
+    ],
 
     'options_enabled': [
         'location',

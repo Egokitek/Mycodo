@@ -56,8 +56,11 @@ INPUT_INFORMATION = {
     'input_name_unique': 'RUUVITAG',
     'input_manufacturer': 'Ruuvi',
     'input_name': 'RuuviTag',
+    'input_library': 'pypi ruuvitag_sensor',
     'measurements_name': 'Acceleration/Humidity/Pressure/Temperature',
     'measurements_dict': measurements_dict,
+    'url_manufacturer': 'https://ruuvi.com/',
+    'url_datasheet': 'https://ruuvi.com/files/ruuvitag-tech-spec-2019-7.pdf',
 
     'options_enabled': [
         'bt_location',
