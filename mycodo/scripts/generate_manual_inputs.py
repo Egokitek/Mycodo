@@ -87,7 +87,10 @@ with open(save_path, 'w') as out_file:
                         if each_dep[0] == "apt":
                             out_file.write("`{0} <https://packages.debian.org/buster/{0}>`__".format(each_dep[2]))
                         elif each_dep[0] == "pip-pypi":
-                            out_file.write("`{0} <https://pypi.org/project/{0}>`__".format(each_dep[2]))
+                            if "==" in each_dep[2]:
+                                out_file.write("`{0} <https://pypi.org/project/{0}>`__".format(each_dep[2].split("==")[0]))
+                            else:
+                                out_file.write("`{0} <https://pypi.org/project/{0}>`__".format(each_dep[2]))
                         elif each_dep[0] == "pip-git":
                             url = re.search('git://(.*).git', each_dep[2])
                             out_file.write("`{name} <https://{url}>`__".format(name=each_dep[1], url=url.group(1)))

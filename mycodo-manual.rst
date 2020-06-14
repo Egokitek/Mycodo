@@ -4315,7 +4315,7 @@ Microchip: MCP342x (x=2,3,4,6,7,8)
 
 | Measurements: Voltage (Analog-to-Digital Converter)
 | Dependencies: `smbus2 <https://pypi.org/project/smbus2>`__,
-  `MCP342x==0.3.3 <https://pypi.org/project/MCP342x==0.3.3>`__
+  `MCP342x <https://pypi.org/project/MCP342x>`__
 | Manufacturer URL(s): `Link
   1 <https://www.microchip.com/wwwproducts/en/MCP3422>`__, `Link
   2 <https://www.microchip.com/wwwproducts/en/MCP3423>`__, `Link
