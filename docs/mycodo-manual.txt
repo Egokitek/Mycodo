@@ -3845,12 +3845,11 @@ Measurements: Store Value(s)
 Mycodo: MQTT Protocol (paho)
 
 Measurements: Variable measurements
-Libraries: pypi paho-mqtt
+Dependencies: paho-mqtt
 
 Mycodo: Mycodo RAM
 
 Measurements: Size RAM in Use
-Libraries: py resource.getrusage()
 
 Mycodo: Mycodo Version
 
@@ -3859,7 +3858,6 @@ Measurements: Version as Major.Minor.Revision
 Mycodo: The Things Network Integration: Data Storage
 
 Measurements: Variable measurements
-Libraries: pypi requests
 
 Raspberry Pi: CPU/GPU Temperature
 
@@ -3868,37 +3866,34 @@ Measurements: Temperature
 Raspberry Pi: Edge
 
 Measurements: Rising/Falling Edge
-Libraries: pypi RPi.GPIO
+Dependencies: RPi.GPIO
 
 Raspberry Pi: GPIO State
 
 Measurements: GPIO State
-Libraries: pypi RPi.GPIO
+Dependencies: RPi.GPIO
 
 Raspberry Pi: Signal (PWM)
 
 Measurements: Frequency/Pulse Width/Duty Cycle
-Libraries: pigpio
+Dependencies: pigpio
 
 Raspberry Pi: Signal (Revolutions)
 
 Measurements: RPM
-Libraries: pigpio
+Dependencies: pigpio
 
 System: CPU Load
 
 Measurements: CPULoad
-Libraries: py os.getloadavg()
 
 System: Free Space
 
 Measurements: Unallocated Disk Space
-Libraries: py os.statvfs()
 
 System: Server Ping
 
 Measurements: Boolean
-Libraries: bash ping
 
 This Input executes the bash command "ping -c [times] -w [deadline]
 [host]" to determine if the host can be pinged.
@@ -3906,7 +3901,6 @@ This Input executes the bash command "ping -c [times] -w [deadline]
 System: Server Port Open
 
 Measurements: Boolean
-Libraries: bash nc
 
 This Input executes the bash command "nc -zv [host] [port]" to determine
 if the host at a particular port is accessible.
@@ -3916,76 +3910,76 @@ Built-In Inputs (Sensors)
 AMS: AS7262
 
 Measurements: Light at 450, 500, 550, 570, 600, 650 nm
-Libraries: pypi as7262
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: as7262
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 AMS: CCS811
 
 Measurements: CO2/VOC/Temperature
-Libraries: pypi Adafruit_CCS811
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: Adafruit_CCS811, Adafruit_GPIO
+Manufacturer URL: Link
+Datasheet URL: Link
 Product URL(s): Link 1, Link 2
 
 AMS: TSL2561
 
 Measurements: Light
-Libraries: pypi tsl2561
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: Adafruit_GPIO, Adafruit_PureIO, tsl2561
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 AMS: TSL2591
 
 Measurements: Light
-Libraries: git maxlklaxl/python-tsl2591
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: tsl2591
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 AOSONG: AM2315/AM2320
 
 Measurements: Humidity/Temperature
-Libraries: pypi quick2wire-api
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: quick2wire-api
+Datasheet URL: Link
+Product URL: Link
 
 AOSONG: DHT11
 
 Measurements: Humidity/Temperature
-Libraries: pigpio
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: pigpio
+Datasheet URL: Link
+Product URL: Link
 
 AOSONG: DHT22
 
 Measurements: Humidity/Temperature
-Libraries: pigpio
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: pigpio
+Datasheet URL: Link
+Product URL: Link
 
 Atlas Scientific: DO
 
 Measurements: Dissolved Oxygen
-Libraries: pypi pylibftdi/fcntl/io/serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: pylibftdi
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Atlas Scientific: EC
 
 Measurements: Electrical Conductivity
-Libraries: pypi pylibftdi/fcntl/io/serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: pylibftdi
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Atlas Scientific: Flow Meter
 
 Measurements: Total Volume, Flow Rate
-Libraries: pypi pylibftdi/fcntl/io/serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: pylibftdi
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Set the Measurement Time Base to a value most appropriate for your
 anticipated flow (it will affect accuracy). This flow rate time base
@@ -3997,37 +3991,37 @@ or hour), then use the Convert to Unit option.
 Atlas Scientific: ORP
 
 Measurements: Oxidation Reduction Potential
-Libraries: pypi pylibftdi/fcntl/io/serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: pylibftdi
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Atlas Scientific: PT-1000
 
 Measurements: Temperature
-Libraries: pypi pylibftdi/fcntl/io/serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: pylibftdi
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Atlas Scientific: Pressure
 
 Measurements: Pressure
-Libraries: pypi pylibftdi/fcntl/io/serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: pylibftdi
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Atlas Scientific: RGB Color
 
 Measurements: RGB, CIE, LUX, Proximity
-Libraries: pypi pylibftdi/fcntl/io/serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: pylibftdi
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Atlas Scientific: pH
 
 Measurements: Ion Concentration
-Libraries: pypi pylibftdi/fcntl/io/serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: pylibftdi
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Calibration Measurement is an optional setting that provides a
 temperature measurement (in Celsius) of the water that the pH is being
@@ -4036,261 +4030,257 @@ measured from.
 BOSCH: BME280
 
 Measurements: Pressure/Humidity/Temperature
-Libraries: Input Module 1: pypi Adafruit_BME280; Input Module 2: pypi
-RPi.bme280
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: Input Variant 1: Adafruit_GPIO, Adafruit_BME280; Input
+Variant 2: RPi.bme280
+Manufacturer URL: Link
+Datasheet URL: Link
 Product URL(s): Link 1, Link 2
 
 BOSCH: BME680
 
 Measurements: Temperature/Humidity/Pressure/Gas
-Libraries: pypi bme680
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: bme680, smbus2
+Manufacturer URL: Link
+Datasheet URL: Link
 Product URL(s): Link 1, Link 2
 
 BOSCH: BMP180
 
 Measurements: Pressure/Temperature
-Libraries: pypi Adafruit_BMP
-Datasheet URL(s): Link 1
+Dependencies: Adafruit_BMP, Adafruit_GPIO
+Datasheet URL: Link
 
 BOSCH: BMP280
 
 Measurements: Pressure/Temperature
-Libraries: pypi Adafruit_GPIO
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: Adafruit_GPIO
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 CO2Meter: K30
 
 Measurements: CO2
-Libraries: pypi serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Catnip Electronics: Chirp
 
 Measurements: Light/Moisture/Temperature
-Libraries: pypi smbus2
-Manufacturer URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: smbus2
+Manufacturer URL: Link
+Product URL: Link
 
 Cozir: Cozir CO2
 
 Measurements: CO2/Humidity/Temperature
-Libraries: git pierre-haessig/pycozir
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: cozir
+Manufacturer URL: Link
+Datasheet URL: Link
 
 MAXIM: DS1822
 
 Measurements: Temperature
-Libraries: pypi w1thermsensor
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: w1thermsensor
+Manufacturer URL: Link
+Datasheet URL: Link
 
 MAXIM: DS1825
 
 Measurements: Temperature
-Libraries: pypi w1thermsensor
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: w1thermsensor
+Manufacturer URL: Link
+Datasheet URL: Link
 
 MAXIM: DS18B20
 
 Measurements: Temperature
-Libraries: Input Module 1: apt ow-shell; Input Module 2: w1thermsensor
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: Input Variant 1: ow-shell; Input Variant 2: w1thermsensor
+Manufacturer URL: Link
+Datasheet URL: Link
 Product URL(s): Link 1, Link 2, Link 3
 
 MAXIM: DS18S20
 
 Measurements: Temperature
-Libraries: pypi w1thermsensor
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: w1thermsensor
+Manufacturer URL: Link
+Datasheet URL: Link
 
 MAXIM: DS28EA00
 
 Measurements: Temperature
-Libraries: pypi w1thermsensor
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: w1thermsensor
+Manufacturer URL: Link
+Datasheet URL: Link
 
 MAXIM: MAX31850K
 
 Measurements: Temperature
-Libraries: pypi w1thermsensor
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: w1thermsensor
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 MAXIM: MAX31855
 
 Measurements: Temperature (Object/Die)
-Libraries: pypi Adafruit_MAX31855
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: Adafruit_MAX31855, Adafruit_GPIO
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 MAXIM: MAX31856
 
 Measurements: Temperature (Object/Die)
-Libraries: pypi RPi.GPIO
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: RPi.GPIO
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 MAXIM: MAX31865
 
 Measurements: Temperature
-Libraries: pypi RPi.GPIO
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: RPi.GPIO
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 Melexis: MLX90614
 
 Measurements: Temperature (Ambient/Object)
-Libraries: pypi smbus2
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: smbus2
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 Microchip: MCP3008
 
 Measurements: Voltage (Analog-to-Digital Converter)
-Libraries: pypi Adafruit_MCP3008
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: Adafruit_MCP3008
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 Microchip: MCP342x (x=2,3,4,6,7,8)
 
 Measurements: Voltage (Analog-to-Digital Converter)
-Libraries: pypi MCP342x
+Dependencies: smbus2, MCP342x==0.3.3
 Manufacturer URL(s): Link 1, Link 2, Link 3, Link 4, Link 5
 Datasheet URL(s): Link 1, Link 2
 
 Microchip: MCP9808
 
 Measurements: Temperature
-Libraries: pypi Adafruit_MCP9808
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: Adafruit_GPIO, Adafruit_MCP9808
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 Panasonic: AMG8833
 
 Measurements: 8x8 Temperature Grid
-Libraries: pypi Adafruit_AMG88xx/Pillow/colour
+Dependencies: libjpeg-dev, zlib1g-dev, colour, Pillow, Adafruit_AMG88xx
 
 ROHM: BH1750
 
 Measurements: Light
-Libraries: pypi smbus2
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: smbus2
+Datasheet URL: Link
+Product URL: Link
 
 Ruuvi: RuuviTag
 
 Measurements: Acceleration/Humidity/Pressure/Temperature
-Libraries: pypi ruuvitag_sensor
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: python3-dev, python3-psutil, bluez, bluez-hcidump,
+ruuvitag_sensor
+Manufacturer URL: Link
+Datasheet URL: Link
 
 STMicroelectronics: VL53L0X
 
 Measurements: Millimeter (Time-of-Flight Distance)
-Libraries: git grantramsay/VL53L0X_rasp_python
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: git+https://github.com/grantramsay/VL53L0X_rasp_python.git
+Manufacturer URL: Link
+Datasheet URL: Link
 Product URL(s): Link 1, Link 2
 
 Sensirion: SHT1x/7x
 
 Measurements: Humidity/Temperature
-Libraries: pypi sht_sensor
+Dependencies: sht_sensor
 Manufacturer URL(s): Link 1, Link 2
 
 Sensirion: SHT2x
 
 Measurements: Humidity/Temperature
-Libraries: pypi smbus2
-Manufacturer URL(s): Link 1
+Dependencies: smbus2
+Manufacturer URL: Link
 
 Sensirion: SHT3x (30, 31, 35)
 
 Measurements: Humidity/Temperature
-Libraries: pypi Adafruit_SHT31
-Manufacturer URL(s): Link 1
+Dependencies: Adafruit_GPIO, Adafruit_SHT31
+Manufacturer URL: Link
 
 Sensorion: SHT31 Smart Gadget
 
 Measurements: Humidity/Temperature
-Libraries: pypi bluepy
-Manufacturer URL(s): Link 1
+Dependencies: pi-bluetooth, libglib2.0-dev, bluepy
+Manufacturer URL: Link
 
 Sonoff: TH16/10 (Tasmota firmware) with AM2301
 
 Measurements: Humidity/Temperature
-Libraries: pypi requests
-Manufacturer URL(s): Link 1
+Manufacturer URL: Link
 
 Sonoff: TH16/10 (Tasmota firmware) with DS18B20
 
 Measurements: Temperature
-Libraries: pypi requests
-Manufacturer URL(s): Link 1
+Manufacturer URL: Link
 
 TE Connectivity: HTU21D
 
 Measurements: Humidity/Temperature
-Libraries: pigpio
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: pigpio
+Manufacturer URL: Link
+Datasheet URL: Link
+Product URL: Link
 
 Texas Instruments: ADS1256
 
 Measurements: Voltage (Waveshare, Analog-to-Digital Converter)
-Libraries: pypi wiringpi, git kizniche/PiPyADC-py3
+Dependencies: wiringpi, pipyadc_py3
 
 Texas Instruments: ADS1x15
 
 Measurements: Voltage (Analog-to-Digital Converter)
-Libraries: pypi Adafruit_ADS1x15
+Dependencies: Adafruit_GPIO, Adafruit_ADS1x15
 
 Texas Instruments: HDC1000
 
 Measurements: Humidity/Temperature
-Libraries: py fcntl/io
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Texas Instruments: TMP006
 
 Measurements: Temperature (Object/Die)
-Libraries: pypi Adafruit_TMP
-Datasheet URL(s): Link 1
-Product URL(s): Link 1
+Dependencies: Adafruit_TMP
+Datasheet URL: Link
+Product URL: Link
 
 Winsen: MH-Z16
 
 Measurements: CO2
-Libraries: pypi smbus2/serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Dependencies: smbus2
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Winsen: MH-Z19
 
 Measurements: CO2
-Libraries: pypi serial
-Datasheet URL(s): Link 1
+Datasheet URL: Link
 
 This is the version of the sensor that does not include the ability to
 conduct automatic baseline correction (ABC). See the B version of the
@@ -4299,9 +4289,8 @@ sensor if you wish to use ABC.
 Winsen: MH-Z19B
 
 Measurements: CO2
-Libraries: pypi serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Manufacturer URL: Link
+Datasheet URL: Link
 
 This is the B version of the sensor that includes the ability to conduct
 automatic baseline correction (ABC).
@@ -4309,14 +4298,13 @@ automatic baseline correction (ABC).
 Winsen: ZH03B
 
 Measurements: Particulates
-Libraries: pypi serial
-Manufacturer URL(s): Link 1
-Datasheet URL(s): Link 1
+Manufacturer URL: Link
+Datasheet URL: Link
 
 Xiaomi: Miflora
 
 Measurements: EC/Light/Moisture/Temperature
-Libraries: pypi miflora
+Dependencies: libglib2.0-dev, miflora, btlewrap, bluepy
 
 I2C Multiplexers
 

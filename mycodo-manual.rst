@@ -3866,13 +3866,12 @@ Mycodo: MQTT Protocol (paho)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Variable measurements
-| Libraries: pypi paho-mqtt
+| Dependencies: `paho-mqtt <https://pypi.org/paho-mqtt>`__
 
 Mycodo: Mycodo RAM
 ^^^^^^^^^^^^^^^^^^
 
 | Measurements: Size RAM in Use
-| Libraries: py resource.getrusage()
 
 Mycodo: Mycodo Version
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -3883,7 +3882,6 @@ Mycodo: The Things Network Integration: Data Storage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Variable measurements
-| Libraries: pypi requests
 
 Raspberry Pi: CPU/GPU Temperature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3894,43 +3892,40 @@ Raspberry Pi: Edge
 ^^^^^^^^^^^^^^^^^^
 
 | Measurements: Rising/Falling Edge
-| Libraries: pypi RPi.GPIO
+| Dependencies: `RPi.GPIO <https://pypi.org/RPi.GPIO>`__
 
 Raspberry Pi: GPIO State
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: GPIO State
-| Libraries: pypi RPi.GPIO
+| Dependencies: `RPi.GPIO <https://pypi.org/RPi.GPIO>`__
 
 Raspberry Pi: Signal (PWM)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Frequency/Pulse Width/Duty Cycle
-| Libraries: pigpio
+| Dependencies: pigpio
 
 Raspberry Pi: Signal (Revolutions)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: RPM
-| Libraries: pigpio
+| Dependencies: pigpio
 
 System: CPU Load
 ^^^^^^^^^^^^^^^^
 
 | Measurements: CPULoad
-| Libraries: py os.getloadavg()
 
 System: Free Space
 ^^^^^^^^^^^^^^^^^^
 
 | Measurements: Unallocated Disk Space
-| Libraries: py os.statvfs()
 
 System: Server Ping
 ^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Boolean
-| Libraries: bash ping
 
 This Input executes the bash command "ping -c [times] -w [deadline]
 [host]" to determine if the host can be pinged.
@@ -3939,7 +3934,6 @@ System: Server Port Open
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Boolean
-| Libraries: bash nc
 
 This Input executes the bash command "nc -zv [host] [port]" to determine
 if the host at a particular port is accessible.
@@ -3951,21 +3945,22 @@ AMS: AS7262
 ^^^^^^^^^^^
 
 | Measurements: Light at 450, 500, 550, 570, 600, 650 nm
-| Libraries: pypi as7262
-| Manufacturer URL(s): `Link 1 <https://ams.com/as7262>`__
-| Datasheet URL(s): `Link
-  1 <https://ams.com/documents/20143/36005/AS7262_DS000486_2-00.pdf/0031f605-5629-e030-73b2-f365fd36a43b>`__
-| Product URL(s): `Link 1 <https://www.sparkfun.com/products/14347>`__
+| Dependencies: `as7262 <https://pypi.org/as7262>`__
+| Manufacturer URL: `Link <https://ams.com/as7262>`__
+| Datasheet URL:
+  `Link <https://ams.com/documents/20143/36005/AS7262_DS000486_2-00.pdf/0031f605-5629-e030-73b2-f365fd36a43b>`__
+| Product URL: `Link <https://www.sparkfun.com/products/14347>`__
 
 AMS: CCS811
 ^^^^^^^^^^^
 
 | Measurements: CO2/VOC/Temperature
-| Libraries: pypi Adafruit_CCS811
-| Manufacturer URL(s): `Link
-  1 <https://www.sciosense.com/products/environmental-sensors/ccs811-gas-sensor-solution/>`__
-| Datasheet URL(s): `Link
-  1 <https://www.sciosense.com/wp-content/uploads/2020/01/CCS811-Datasheet.pdf>`__
+| Dependencies: `Adafruit_CCS811 <https://pypi.org/Adafruit_CCS811>`__,
+  `Adafruit_GPIO <https://pypi.org/Adafruit_GPIO>`__
+| Manufacturer URL:
+  `Link <https://www.sciosense.com/products/environmental-sensors/ccs811-gas-sensor-solution/>`__
+| Datasheet URL:
+  `Link <https://www.sciosense.com/wp-content/uploads/2020/01/CCS811-Datasheet.pdf>`__
 | Product URL(s): `Link 1 <https://www.adafruit.com/product/3566>`__,
   `Link 2 <https://www.sparkfun.com/products/14193>`__
 
@@ -3973,78 +3968,79 @@ AMS: TSL2561
 ^^^^^^^^^^^^
 
 | Measurements: Light
-| Libraries: pypi tsl2561
-| Manufacturer URL(s): `Link 1 <https://ams.com/tsl2561>`__
-| Datasheet URL(s): `Link
-  1 <https://ams.com/documents/20143/36005/TSL2561_DS000110_3-00.pdf/18a41097-2035-4333-c70e-bfa544c0a98b>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/439>`__
+| Dependencies: `Adafruit_GPIO <https://pypi.org/Adafruit_GPIO>`__,
+  `Adafruit_PureIO <https://pypi.org/Adafruit_PureIO>`__,
+  `tsl2561 <https://pypi.org/tsl2561>`__
+| Manufacturer URL: `Link <https://ams.com/tsl2561>`__
+| Datasheet URL:
+  `Link <https://ams.com/documents/20143/36005/TSL2561_DS000110_3-00.pdf/18a41097-2035-4333-c70e-bfa544c0a98b>`__
+| Product URL: `Link <https://www.adafruit.com/product/439>`__
 
 AMS: TSL2591
 ^^^^^^^^^^^^
 
 | Measurements: Light
-| Libraries: git maxlklaxl/python-tsl2591
-| Manufacturer URL(s): `Link 1 <https://ams.com/tsl25911>`__
-| Datasheet URL(s): `Link
-  1 <https://ams.com/documents/20143/36005/TSL2591_DS000338_6-00.pdf/090eb50d-bb18-5b45-4938-9b3672f86b80>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/1980>`__
+| Dependencies:
+  `tsl2591 <https://github.com/maxlklaxl/python-tsl2591>`__
+| Manufacturer URL: `Link <https://ams.com/tsl25911>`__
+| Datasheet URL:
+  `Link <https://ams.com/documents/20143/36005/TSL2591_DS000338_6-00.pdf/090eb50d-bb18-5b45-4938-9b3672f86b80>`__
+| Product URL: `Link <https://www.adafruit.com/product/1980>`__
 
 AOSONG: AM2315/AM2320
 ^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: pypi quick2wire-api
-| Datasheet URL(s): `Link
-  1 <https://cdn-shop.adafruit.com/datasheets/AM2315.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/1293>`__
+| Dependencies: `quick2wire-api <https://pypi.org/quick2wire-api>`__
+| Datasheet URL:
+  `Link <https://cdn-shop.adafruit.com/datasheets/AM2315.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/1293>`__
 
 AOSONG: DHT11
 ^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: pigpio
-| Datasheet URL(s): `Link
-  1 <http://www.adafruit.com/datasheets/DHT11-chinese.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/386>`__
+| Dependencies: pigpio
+| Datasheet URL:
+  `Link <http://www.adafruit.com/datasheets/DHT11-chinese.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/386>`__
 
 AOSONG: DHT22
 ^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: pigpio
-| Datasheet URL(s): `Link
-  1 <http://www.adafruit.com/datasheets/DHT22.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/385>`__
+| Dependencies: pigpio
+| Datasheet URL: `Link <http://www.adafruit.com/datasheets/DHT22.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/385>`__
 
 Atlas Scientific: DO
 ^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Dissolved Oxygen
-| Libraries: pypi pylibftdi/fcntl/io/serial
-| Manufacturer URL(s): `Link
-  1 <https://www.atlas-scientific.com/dissolved-oxygen.html>`__
-| Datasheet URL(s): `Link
-  1 <https://www.atlas-scientific.com/files/DO_EZO_Datasheet.pdf>`__
+| Dependencies: `pylibftdi <https://pypi.org/pylibftdi>`__
+| Manufacturer URL:
+  `Link <https://www.atlas-scientific.com/dissolved-oxygen.html>`__
+| Datasheet URL:
+  `Link <https://www.atlas-scientific.com/files/DO_EZO_Datasheet.pdf>`__
 
 Atlas Scientific: EC
 ^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Electrical Conductivity
-| Libraries: pypi pylibftdi/fcntl/io/serial
-| Manufacturer URL(s): `Link
-  1 <https://www.atlas-scientific.com/conductivity/>`__
-| Datasheet URL(s): `Link
-  1 <https://www.atlas-scientific.com/files/EC_EZO_Datasheet.pdf>`__
+| Dependencies: `pylibftdi <https://pypi.org/pylibftdi>`__
+| Manufacturer URL:
+  `Link <https://www.atlas-scientific.com/conductivity/>`__
+| Datasheet URL:
+  `Link <https://www.atlas-scientific.com/files/EC_EZO_Datasheet.pdf>`__
 
 Atlas Scientific: Flow Meter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Total Volume, Flow Rate
-| Libraries: pypi pylibftdi/fcntl/io/serial
-| Manufacturer URL(s): `Link
-  1 <https://www.atlas-scientific.com/flow/>`__
-| Datasheet URL(s): `Link
-  1 <https://www.atlas-scientific.com/files/flow_EZO_Datasheet.pdf>`__
+| Dependencies: `pylibftdi <https://pypi.org/pylibftdi>`__
+| Manufacturer URL: `Link <https://www.atlas-scientific.com/flow/>`__
+| Datasheet URL:
+  `Link <https://www.atlas-scientific.com/files/flow_EZO_Datasheet.pdf>`__
 
 Set the Measurement Time Base to a value most appropriate for your
 anticipated flow (it will affect accuracy). This flow rate time base
@@ -4057,50 +4053,48 @@ Atlas Scientific: ORP
 ^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Oxidation Reduction Potential
-| Libraries: pypi pylibftdi/fcntl/io/serial
-| Manufacturer URL(s): `Link
-  1 <https://www.atlas-scientific.com/orp/>`__
-| Datasheet URL(s): `Link
-  1 <https://www.atlas-scientific.com/files/ORP_EZO_Datasheet.pdf>`__
+| Dependencies: `pylibftdi <https://pypi.org/pylibftdi>`__
+| Manufacturer URL: `Link <https://www.atlas-scientific.com/orp/>`__
+| Datasheet URL:
+  `Link <https://www.atlas-scientific.com/files/ORP_EZO_Datasheet.pdf>`__
 
 Atlas Scientific: PT-1000
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: pypi pylibftdi/fcntl/io/serial
-| Manufacturer URL(s): `Link
-  1 <https://www.atlas-scientific.com/temperature/>`__
-| Datasheet URL(s): `Link
-  1 <https://www.atlas-scientific.com/files/EZO_RTD_Datasheet.pdf>`__
+| Dependencies: `pylibftdi <https://pypi.org/pylibftdi>`__
+| Manufacturer URL:
+  `Link <https://www.atlas-scientific.com/temperature/>`__
+| Datasheet URL:
+  `Link <https://www.atlas-scientific.com/files/EZO_RTD_Datasheet.pdf>`__
 
 Atlas Scientific: Pressure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Pressure
-| Libraries: pypi pylibftdi/fcntl/io/serial
-| Manufacturer URL(s): `Link
-  1 <https://www.atlas-scientific.com/pressure/>`__
-| Datasheet URL(s): `Link
-  1 <https://www.atlas-scientific.com/files/EZO-PRS-Datasheet.pdf>`__
+| Dependencies: `pylibftdi <https://pypi.org/pylibftdi>`__
+| Manufacturer URL:
+  `Link <https://www.atlas-scientific.com/pressure/>`__
+| Datasheet URL:
+  `Link <https://www.atlas-scientific.com/files/EZO-PRS-Datasheet.pdf>`__
 
 Atlas Scientific: RGB Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: RGB, CIE, LUX, Proximity
-| Libraries: pypi pylibftdi/fcntl/io/serial
-| Manufacturer URL(s): `Link
-  1 <https://www.atlas-scientific.com/ezo-rgb/>`__
-| Datasheet URL(s): `Link
-  1 <https://www.atlas-scientific.com/files/EZO_RGB_Datasheet.pdf>`__
+| Dependencies: `pylibftdi <https://pypi.org/pylibftdi>`__
+| Manufacturer URL: `Link <https://www.atlas-scientific.com/ezo-rgb/>`__
+| Datasheet URL:
+  `Link <https://www.atlas-scientific.com/files/EZO_RGB_Datasheet.pdf>`__
 
 Atlas Scientific: pH
 ^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Ion Concentration
-| Libraries: pypi pylibftdi/fcntl/io/serial
-| Manufacturer URL(s): `Link 1 <https://www.atlas-scientific.com/ph/>`__
-| Datasheet URL(s): `Link
-  1 <https://www.atlas-scientific.com/files/pH_EZO_Datasheet.pdf>`__
+| Dependencies: `pylibftdi <https://pypi.org/pylibftdi>`__
+| Manufacturer URL: `Link <https://www.atlas-scientific.com/ph/>`__
+| Datasheet URL:
+  `Link <https://www.atlas-scientific.com/files/pH_EZO_Datasheet.pdf>`__
 
 Calibration Measurement is an optional setting that provides a
 temperature measurement (in Celsius) of the water that the pH is being
@@ -4110,12 +4104,14 @@ BOSCH: BME280
 ^^^^^^^^^^^^^
 
 | Measurements: Pressure/Humidity/Temperature
-| Libraries: Input Module 1: pypi Adafruit_BME280; Input Module 2: pypi
-  RPi.bme280
-| Manufacturer URL(s): `Link
-  1 <https://www.bosch-sensortec.com/bst/products/all_products/bme280>`__
-| Datasheet URL(s): `Link
-  1 <https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf>`__
+| Dependencies: Input Variant 1:
+  `Adafruit_GPIO <https://pypi.org/Adafruit_GPIO>`__,
+  `Adafruit_BME280 <https://github.com/adafruit/Adafruit_Python_BME280>`__;
+  Input Variant 2: `RPi.bme280 <https://pypi.org/RPi.bme280>`__
+| Manufacturer URL:
+  `Link <https://www.bosch-sensortec.com/bst/products/all_products/bme280>`__
+| Datasheet URL:
+  `Link <https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf>`__
 | Product URL(s): `Link 1 <https://www.adafruit.com/product/2652>`__,
   `Link 2 <https://www.sparkfun.com/products/13676>`__
 
@@ -4123,11 +4119,12 @@ BOSCH: BME680
 ^^^^^^^^^^^^^
 
 | Measurements: Temperature/Humidity/Pressure/Gas
-| Libraries: pypi bme680
-| Manufacturer URL(s): `Link
-  1 <https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors-bme680/>`__
-| Datasheet URL(s): `Link
-  1 <https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf>`__
+| Dependencies: `bme680 <https://pypi.org/bme680>`__,
+  `smbus2 <https://pypi.org/smbus2>`__
+| Manufacturer URL:
+  `Link <https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors-bme680/>`__
+| Datasheet URL:
+  `Link <https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf>`__
 | Product URL(s): `Link 1 <https://www.adafruit.com/product/3660>`__,
   `Link 2 <https://www.sparkfun.com/products/16466>`__
 
@@ -4135,79 +4132,81 @@ BOSCH: BMP180
 ^^^^^^^^^^^^^
 
 | Measurements: Pressure/Temperature
-| Libraries: pypi Adafruit_BMP
-| Datasheet URL(s): `Link
-  1 <https://ae-bst.resource.bosch.com/media/_tech/media/product_flyer/BST-BMP180-FL000.pdf>`__
+| Dependencies: `Adafruit_BMP <https://pypi.org/Adafruit_BMP>`__,
+  `Adafruit_GPIO <https://pypi.org/Adafruit_GPIO>`__
+| Datasheet URL:
+  `Link <https://ae-bst.resource.bosch.com/media/_tech/media/product_flyer/BST-BMP180-FL000.pdf>`__
 
 BOSCH: BMP280
 ^^^^^^^^^^^^^
 
 | Measurements: Pressure/Temperature
-| Libraries: pypi Adafruit_GPIO
-| Manufacturer URL(s): `Link
-  1 <https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/pressure-sensors-bmp280-1.html>`__
-| Datasheet URL(s): `Link
-  1 <https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/2651>`__
+| Dependencies: `Adafruit_GPIO <https://pypi.org/Adafruit_GPIO>`__
+| Manufacturer URL:
+  `Link <https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/pressure-sensors-bmp280-1.html>`__
+| Datasheet URL:
+  `Link <https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/2651>`__
 
 CO2Meter: K30
 ^^^^^^^^^^^^^
 
 | Measurements: CO2
-| Libraries: pypi serial
-| Manufacturer URL(s): `Link
-  1 <https://www.co2meter.com/products/k-30-co2-sensor-module>`__
-| Datasheet URL(s): `Link
-  1 <http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf>`__
+| Manufacturer URL:
+  `Link <https://www.co2meter.com/products/k-30-co2-sensor-module>`__
+| Datasheet URL:
+  `Link <http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf>`__
 
 Catnip Electronics: Chirp
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Light/Moisture/Temperature
-| Libraries: pypi smbus2
-| Manufacturer URL(s): `Link 1 <https://wemakethings.net/chirp/>`__
-| Product URL(s): `Link
-  1 <https://www.tindie.com/products/miceuz/chirp-plant-watering-alarm/>`__
+| Dependencies: `smbus2 <https://pypi.org/smbus2>`__
+| Manufacturer URL: `Link <https://wemakethings.net/chirp/>`__
+| Product URL:
+  `Link <https://www.tindie.com/products/miceuz/chirp-plant-watering-alarm/>`__
 
 Cozir: Cozir CO2
 ^^^^^^^^^^^^^^^^
 
 | Measurements: CO2/Humidity/Temperature
-| Libraries: git pierre-haessig/pycozir
-| Manufacturer URL(s): `Link
-  1 <https://www.co2meter.com/products/cozir-2000-ppm-co2-sensor>`__
-| Datasheet URL(s): `Link
-  1 <https://cdn.shopify.com/s/files/1/0019/5952/files/Datasheet_COZIR_A_CO2Meter_4_15.pdf>`__
+| Dependencies: `cozir <https://github.com/pierre-haessig/pycozir>`__
+| Manufacturer URL:
+  `Link <https://www.co2meter.com/products/cozir-2000-ppm-co2-sensor>`__
+| Datasheet URL:
+  `Link <https://cdn.shopify.com/s/files/1/0019/5952/files/Datasheet_COZIR_A_CO2Meter_4_15.pdf>`__
 
 MAXIM: DS1822
 ^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: pypi w1thermsensor
-| Manufacturer URL(s): `Link
-  1 <https://www.maximintegrated.com/en/products/sensors/DS1822.html>`__
-| Datasheet URL(s): `Link
-  1 <https://datasheets.maximintegrated.com/en/ds/DS1822.pdf>`__
+| Dependencies: `w1thermsensor <https://pypi.org/w1thermsensor>`__
+| Manufacturer URL:
+  `Link <https://www.maximintegrated.com/en/products/sensors/DS1822.html>`__
+| Datasheet URL:
+  `Link <https://datasheets.maximintegrated.com/en/ds/DS1822.pdf>`__
 
 MAXIM: DS1825
 ^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: pypi w1thermsensor
-| Manufacturer URL(s): `Link
-  1 <https://www.maximintegrated.com/en/products/sensors/DS1825.html>`__
-| Datasheet URL(s): `Link
-  1 <https://datasheets.maximintegrated.com/en/ds/DS1825.pdf>`__
+| Dependencies: `w1thermsensor <https://pypi.org/w1thermsensor>`__
+| Manufacturer URL:
+  `Link <https://www.maximintegrated.com/en/products/sensors/DS1825.html>`__
+| Datasheet URL:
+  `Link <https://datasheets.maximintegrated.com/en/ds/DS1825.pdf>`__
 
 MAXIM: DS18B20
 ^^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: Input Module 1: apt ow-shell; Input Module 2: w1thermsensor
-| Manufacturer URL(s): `Link
-  1 <https://www.maximintegrated.com/en/products/sensors/DS18B20.html>`__
-| Datasheet URL(s): `Link
-  1 <https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf>`__
+| Dependencies: Input Variant 1:
+  `ow-shell <https://packages.debian.org/buster/ow-shell>`__; Input
+  Variant 2: `w1thermsensor <https://pypi.org/w1thermsensor>`__
+| Manufacturer URL:
+  `Link <https://www.maximintegrated.com/en/products/sensors/DS18B20.html>`__
+| Datasheet URL:
+  `Link <https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf>`__
 | Product URL(s): `Link 1 <https://www.adafruit.com/product/374>`__,
   `Link 2 <https://www.adafruit.com/product/381>`__, `Link
   3 <https://www.sparkfun.com/products/245>`__
@@ -4216,93 +4215,96 @@ MAXIM: DS18S20
 ^^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: pypi w1thermsensor
-| Manufacturer URL(s): `Link
-  1 <https://www.maximintegrated.com/en/products/sensors/DS18S20.html>`__
-| Datasheet URL(s): `Link
-  1 <https://datasheets.maximintegrated.com/en/ds/DS18S20.pdf>`__
+| Dependencies: `w1thermsensor <https://pypi.org/w1thermsensor>`__
+| Manufacturer URL:
+  `Link <https://www.maximintegrated.com/en/products/sensors/DS18S20.html>`__
+| Datasheet URL:
+  `Link <https://datasheets.maximintegrated.com/en/ds/DS18S20.pdf>`__
 
 MAXIM: DS28EA00
 ^^^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: pypi w1thermsensor
-| Manufacturer URL(s): `Link
-  1 <https://www.maximintegrated.com/en/products/interface/sensor-interface/DS28EA00.html>`__
-| Datasheet URL(s): `Link
-  1 <https://datasheets.maximintegrated.com/en/ds/DS28EA00.pdf>`__
+| Dependencies: `w1thermsensor <https://pypi.org/w1thermsensor>`__
+| Manufacturer URL:
+  `Link <https://www.maximintegrated.com/en/products/interface/sensor-interface/DS28EA00.html>`__
+| Datasheet URL:
+  `Link <https://datasheets.maximintegrated.com/en/ds/DS28EA00.pdf>`__
 
 MAXIM: MAX31850K
 ^^^^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: pypi w1thermsensor
-| Manufacturer URL(s): `Link
-  1 <https://www.maximintegrated.com/en/products/sensors/MAX31850EVKIT.html>`__
-| Datasheet URL(s): `Link
-  1 <https://datasheets.maximintegrated.com/en/ds/MAX31850-MAX31851.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/1727>`__
+| Dependencies: `w1thermsensor <https://pypi.org/w1thermsensor>`__
+| Manufacturer URL:
+  `Link <https://www.maximintegrated.com/en/products/sensors/MAX31850EVKIT.html>`__
+| Datasheet URL:
+  `Link <https://datasheets.maximintegrated.com/en/ds/MAX31850-MAX31851.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/1727>`__
 
 MAXIM: MAX31855
 ^^^^^^^^^^^^^^^
 
 | Measurements: Temperature (Object/Die)
-| Libraries: pypi Adafruit_MAX31855
-| Manufacturer URL(s): `Link
-  1 <https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31855.html>`__
-| Datasheet URL(s): `Link
-  1 <https://datasheets.maximintegrated.com/en/ds/MAX31855.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/269>`__
+| Dependencies:
+  `Adafruit_MAX31855 <https://github.com/adafruit/Adafruit_Python_MAX31855>`__,
+  `Adafruit_GPIO <https://pypi.org/Adafruit_GPIO>`__
+| Manufacturer URL:
+  `Link <https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31855.html>`__
+| Datasheet URL:
+  `Link <https://datasheets.maximintegrated.com/en/ds/MAX31855.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/269>`__
 
 MAXIM: MAX31856
 ^^^^^^^^^^^^^^^
 
 | Measurements: Temperature (Object/Die)
-| Libraries: pypi RPi.GPIO
-| Manufacturer URL(s): `Link
-  1 <https://www.maximintegrated.com/en/products/sensors/MAX31856.html>`__
-| Datasheet URL(s): `Link
-  1 <https://datasheets.maximintegrated.com/en/ds/MAX31856.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/3263>`__
+| Dependencies: `RPi.GPIO <https://pypi.org/RPi.GPIO>`__
+| Manufacturer URL:
+  `Link <https://www.maximintegrated.com/en/products/sensors/MAX31856.html>`__
+| Datasheet URL:
+  `Link <https://datasheets.maximintegrated.com/en/ds/MAX31856.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/3263>`__
 
 MAXIM: MAX31865
 ^^^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: pypi RPi.GPIO
-| Manufacturer URL(s): `Link
-  1 <https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31865.html>`__
-| Datasheet URL(s): `Link
-  1 <https://datasheets.maximintegrated.com/en/ds/MAX31865.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/3328>`__
+| Dependencies: `RPi.GPIO <https://pypi.org/RPi.GPIO>`__
+| Manufacturer URL:
+  `Link <https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31865.html>`__
+| Datasheet URL:
+  `Link <https://datasheets.maximintegrated.com/en/ds/MAX31865.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/3328>`__
 
 Melexis: MLX90614
 ^^^^^^^^^^^^^^^^^
 
 | Measurements: Temperature (Ambient/Object)
-| Libraries: pypi smbus2
-| Manufacturer URL(s): `Link
-  1 <https://www.melexis.com/en/product/MLX90614/Digital-Plug-Play-Infrared-Thermometer-TO-Can>`__
-| Datasheet URL(s): `Link
-  1 <https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf>`__
-| Product URL(s): `Link 1 <https://www.sparkfun.com/products/9570>`__
+| Dependencies: `smbus2 <https://pypi.org/smbus2>`__
+| Manufacturer URL:
+  `Link <https://www.melexis.com/en/product/MLX90614/Digital-Plug-Play-Infrared-Thermometer-TO-Can>`__
+| Datasheet URL:
+  `Link <https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf>`__
+| Product URL: `Link <https://www.sparkfun.com/products/9570>`__
 
 Microchip: MCP3008
 ^^^^^^^^^^^^^^^^^^
 
 | Measurements: Voltage (Analog-to-Digital Converter)
-| Libraries: pypi Adafruit_MCP3008
-| Manufacturer URL(s): `Link
-  1 <https://www.microchip.com/wwwproducts/en/en010530>`__
-| Datasheet URL(s): `Link
-  1 <http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/856>`__
+| Dependencies: `Adafruit_MCP3008 <https://pypi.org/Adafruit_MCP3008>`__
+| Manufacturer URL:
+  `Link <https://www.microchip.com/wwwproducts/en/en010530>`__
+| Datasheet URL:
+  `Link <http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/856>`__
 
 Microchip: MCP342x (x=2,3,4,6,7,8)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Voltage (Analog-to-Digital Converter)
-| Libraries: pypi MCP342x
+| Dependencies: `smbus2 <https://pypi.org/smbus2>`__,
+  `MCP342x==0.3.3 <https://pypi.org/MCP342x==0.3.3>`__
 | Manufacturer URL(s): `Link
   1 <https://www.microchip.com/wwwproducts/en/MCP3422>`__, `Link
   2 <https://www.microchip.com/wwwproducts/en/MCP3423>`__, `Link
@@ -4318,46 +4320,58 @@ Microchip: MCP9808
 ^^^^^^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: pypi Adafruit_MCP9808
-| Manufacturer URL(s): `Link
-  1 <https://www.microchip.com/wwwproducts/en/en556182>`__
-| Datasheet URL(s): `Link
-  1 <http://ww1.microchip.com/downloads/en/DeviceDoc/MCP9808-0.5C-Maximum-Accuracy-Digital-Temperature-Sensor-Data-Sheet-DS20005095B.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/1782>`__
+| Dependencies: `Adafruit_GPIO <https://pypi.org/Adafruit_GPIO>`__,
+  `Adafruit_MCP9808 <https://github.com/adafruit/Adafruit_Python_MCP9808>`__
+| Manufacturer URL:
+  `Link <https://www.microchip.com/wwwproducts/en/en556182>`__
+| Datasheet URL:
+  `Link <http://ww1.microchip.com/downloads/en/DeviceDoc/MCP9808-0.5C-Maximum-Accuracy-Digital-Temperature-Sensor-Data-Sheet-DS20005095B.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/1782>`__
 
 Panasonic: AMG8833
 ^^^^^^^^^^^^^^^^^^
 
 | Measurements: 8x8 Temperature Grid
-| Libraries: pypi Adafruit_AMG88xx/Pillow/colour
+| Dependencies:
+  `libjpeg-dev <https://packages.debian.org/buster/libjpeg-dev>`__,
+  `zlib1g-dev <https://packages.debian.org/buster/zlib1g-dev>`__,
+  `colour <https://pypi.org/colour>`__,
+  `Pillow <https://pypi.org/Pillow>`__,
+  `Adafruit_AMG88xx <https://github.com/adafruit/Adafruit_AMG88xx_python>`__
 
 ROHM: BH1750
 ^^^^^^^^^^^^
 
 | Measurements: Light
-| Libraries: pypi smbus2
-| Datasheet URL(s): `Link
-  1 <http://rohmfs.rohm.com/en/products/databook/datasheet/ic/sensor/light/bh1721fvc-e.pdf>`__
-| Product URL(s): `Link 1 <https://www.dfrobot.com/product-531.html>`__
+| Dependencies: `smbus2 <https://pypi.org/smbus2>`__
+| Datasheet URL:
+  `Link <http://rohmfs.rohm.com/en/products/databook/datasheet/ic/sensor/light/bh1721fvc-e.pdf>`__
+| Product URL: `Link <https://www.dfrobot.com/product-531.html>`__
 
 Ruuvi: RuuviTag
 ^^^^^^^^^^^^^^^
 
 | Measurements: Acceleration/Humidity/Pressure/Temperature
-| Libraries: pypi ruuvitag_sensor
-| Manufacturer URL(s): `Link 1 <https://ruuvi.com/>`__
-| Datasheet URL(s): `Link
-  1 <https://ruuvi.com/files/ruuvitag-tech-spec-2019-7.pdf>`__
+| Dependencies:
+  `python3-dev <https://packages.debian.org/buster/python3-dev>`__,
+  `python3-psutil <https://packages.debian.org/buster/python3-psutil>`__,
+  `bluez <https://packages.debian.org/buster/bluez>`__,
+  `bluez-hcidump <https://packages.debian.org/buster/bluez-hcidump>`__,
+  `ruuvitag_sensor <https://pypi.org/ruuvitag_sensor>`__
+| Manufacturer URL: `Link <https://ruuvi.com/>`__
+| Datasheet URL:
+  `Link <https://ruuvi.com/files/ruuvitag-tech-spec-2019-7.pdf>`__
 
 STMicroelectronics: VL53L0X
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Millimeter (Time-of-Flight Distance)
-| Libraries: git grantramsay/VL53L0X_rasp_python
-| Manufacturer URL(s): `Link
-  1 <https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__
-| Datasheet URL(s): `Link
-  1 <https://www.st.com/resource/en/datasheet/vl53l0x.pdf>`__
+| Dependencies:
+  `git+https://github.com/grantramsay/VL53L0X_rasp_python.git <https://pypi.org/git+https://github.com/grantramsay/VL53L0X_rasp_python.git>`__
+| Manufacturer URL:
+  `Link <https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__
+| Datasheet URL:
+  `Link <https://www.st.com/resource/en/datasheet/vl53l0x.pdf>`__
 | Product URL(s): `Link 1 <https://www.adafruit.com/product/3317>`__,
   `Link 2 <https://www.pololu.com/product/2490>`__
 
@@ -4365,7 +4379,7 @@ Sensirion: SHT1x/7x
 ^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: pypi sht_sensor
+| Dependencies: `sht_sensor <https://pypi.org/sht_sensor>`__
 | Manufacturer URL(s): `Link
   1 <https://www.sensirion.com/en/environmental-sensors/humidity-sensors/digital-humidity-sensors-for-accurate-measurements/>`__,
   `Link
@@ -4375,100 +4389,102 @@ Sensirion: SHT2x
 ^^^^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: pypi smbus2
-| Manufacturer URL(s): `Link
-  1 <https://www.sensirion.com/en/environmental-sensors/humidity-sensors/humidity-temperature-sensor-sht2x-digital-i2c-accurate/>`__
+| Dependencies: `smbus2 <https://pypi.org/smbus2>`__
+| Manufacturer URL:
+  `Link <https://www.sensirion.com/en/environmental-sensors/humidity-sensors/humidity-temperature-sensor-sht2x-digital-i2c-accurate/>`__
 
 Sensirion: SHT3x (30, 31, 35)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: pypi Adafruit_SHT31
-| Manufacturer URL(s): `Link
-  1 <https://www.sensirion.com/en/environmental-sensors/humidity-sensors/digital-humidity-sensors-for-various-applications/>`__
+| Dependencies: `Adafruit_GPIO <https://pypi.org/Adafruit_GPIO>`__,
+  `Adafruit_SHT31 <https://github.com/ralf1070/Adafruit_Python_SHT31>`__
+| Manufacturer URL:
+  `Link <https://www.sensirion.com/en/environmental-sensors/humidity-sensors/digital-humidity-sensors-for-various-applications/>`__
 
 Sensorion: SHT31 Smart Gadget
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: pypi bluepy
-| Manufacturer URL(s): `Link
-  1 <https://www.sensirion.com/en/environmental-sensors/humidity-sensors/development-kit/>`__
+| Dependencies:
+  `pi-bluetooth <https://packages.debian.org/buster/pi-bluetooth>`__,
+  `libglib2.0-dev <https://packages.debian.org/buster/libglib2.0-dev>`__,
+  `bluepy <https://pypi.org/bluepy>`__
+| Manufacturer URL:
+  `Link <https://www.sensirion.com/en/environmental-sensors/humidity-sensors/development-kit/>`__
 
 Sonoff: TH16/10 (Tasmota firmware) with AM2301
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: pypi requests
-| Manufacturer URL(s): `Link
-  1 <https://sonoff.tech/product/wifi-diy-smart-switches/th10-th16>`__
+| Manufacturer URL:
+  `Link <https://sonoff.tech/product/wifi-diy-smart-switches/th10-th16>`__
 
 Sonoff: TH16/10 (Tasmota firmware) with DS18B20
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Temperature
-| Libraries: pypi requests
-| Manufacturer URL(s): `Link
-  1 <https://sonoff.tech/product/wifi-diy-smart-switches/th10-th16>`__
+| Manufacturer URL:
+  `Link <https://sonoff.tech/product/wifi-diy-smart-switches/th10-th16>`__
 
 TE Connectivity: HTU21D
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: pigpio
-| Manufacturer URL(s): `Link
-  1 <https://www.te.com/usa-en/product-CAT-HSC0004.html>`__
-| Datasheet URL(s): `Link
-  1 <https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7FHPC199_6%7FA6%7Fpdf%7FEnglish%7FENG_DS_HPC199_6_A6.pdf%7FCAT-HSC0004>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/1899>`__
+| Dependencies: pigpio
+| Manufacturer URL:
+  `Link <https://www.te.com/usa-en/product-CAT-HSC0004.html>`__
+| Datasheet URL:
+  `Link <https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7FHPC199_6%7FA6%7Fpdf%7FEnglish%7FENG_DS_HPC199_6_A6.pdf%7FCAT-HSC0004>`__
+| Product URL: `Link <https://www.adafruit.com/product/1899>`__
 
 Texas Instruments: ADS1256
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Voltage (Waveshare, Analog-to-Digital Converter)
-| Libraries: pypi wiringpi, git kizniche/PiPyADC-py3
+| Dependencies: `wiringpi <https://pypi.org/wiringpi>`__,
+  `pipyadc_py3 <https://github.com/kizniche/PiPyADC-py3>`__
 
 Texas Instruments: ADS1x15
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Voltage (Analog-to-Digital Converter)
-| Libraries: pypi Adafruit_ADS1x15
+| Dependencies: `Adafruit_GPIO <https://pypi.org/Adafruit_GPIO>`__,
+  `Adafruit_ADS1x15 <https://pypi.org/Adafruit_ADS1x15>`__
 
 Texas Instruments: HDC1000
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Humidity/Temperature
-| Libraries: py fcntl/io
-| Manufacturer URL(s): `Link 1 <https://www.ti.com/product/HDC1000>`__
-| Datasheet URL(s): `Link
-  1 <https://www.ti.com/lit/ds/symlink/hdc1000.pdf>`__
+| Manufacturer URL: `Link <https://www.ti.com/product/HDC1000>`__
+| Datasheet URL:
+  `Link <https://www.ti.com/lit/ds/symlink/hdc1000.pdf>`__
 
 Texas Instruments: TMP006
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Measurements: Temperature (Object/Die)
-| Libraries: pypi Adafruit_TMP
-| Datasheet URL(s): `Link
-  1 <http://www.adafruit.com/datasheets/tmp006.pdf>`__
-| Product URL(s): `Link 1 <https://www.adafruit.com/product/1296>`__
+| Dependencies: `Adafruit_TMP <https://pypi.org/Adafruit_TMP>`__
+| Datasheet URL:
+  `Link <http://www.adafruit.com/datasheets/tmp006.pdf>`__
+| Product URL: `Link <https://www.adafruit.com/product/1296>`__
 
 Winsen: MH-Z16
 ^^^^^^^^^^^^^^
 
 | Measurements: CO2
-| Libraries: pypi smbus2/serial
-| Manufacturer URL(s): `Link
-  1 <https://www.winsen-sensor.com/sensors/co2-sensor/mh-z16.html>`__
-| Datasheet URL(s): `Link
-  1 <https://www.winsen-sensor.com/d/files/MH-Z16.pdf>`__
+| Dependencies: `smbus2 <https://pypi.org/smbus2>`__
+| Manufacturer URL:
+  `Link <https://www.winsen-sensor.com/sensors/co2-sensor/mh-z16.html>`__
+| Datasheet URL:
+  `Link <https://www.winsen-sensor.com/d/files/MH-Z16.pdf>`__
 
 Winsen: MH-Z19
 ^^^^^^^^^^^^^^
 
 | Measurements: CO2
-| Libraries: pypi serial
-| Datasheet URL(s): `Link
-  1 <https://www.winsen-sensor.com/d/files/PDF/Infrared%20Gas%20Sensor/NDIR%20CO2%20SENSOR/MH-Z19%20CO2%20Ver1.0.pdf>`__
+| Datasheet URL:
+  `Link <https://www.winsen-sensor.com/d/files/PDF/Infrared%20Gas%20Sensor/NDIR%20CO2%20SENSOR/MH-Z19%20CO2%20Ver1.0.pdf>`__
 
 This is the version of the sensor that does not include the ability to
 conduct automatic baseline correction (ABC). See the B version of the
@@ -4478,11 +4494,10 @@ Winsen: MH-Z19B
 ^^^^^^^^^^^^^^^
 
 | Measurements: CO2
-| Libraries: pypi serial
-| Manufacturer URL(s): `Link
-  1 <https://www.winsen-sensor.com/sensors/co2-sensor/mh-z19b.html>`__
-| Datasheet URL(s): `Link
-  1 <https://www.winsen-sensor.com/d/files/MH-Z19B.pdf>`__
+| Manufacturer URL:
+  `Link <https://www.winsen-sensor.com/sensors/co2-sensor/mh-z19b.html>`__
+| Datasheet URL:
+  `Link <https://www.winsen-sensor.com/d/files/MH-Z19B.pdf>`__
 
 This is the B version of the sensor that includes the ability to conduct
 automatic baseline correction (ABC).
@@ -4491,17 +4506,20 @@ Winsen: ZH03B
 ^^^^^^^^^^^^^
 
 | Measurements: Particulates
-| Libraries: pypi serial
-| Manufacturer URL(s): `Link
-  1 <https://www.winsen-sensor.com/sensors/dust-sensor/zh3b.html>`__
-| Datasheet URL(s): `Link
-  1 <https://www.winsen-sensor.com/d/files/ZH03B.pdf>`__
+| Manufacturer URL:
+  `Link <https://www.winsen-sensor.com/sensors/dust-sensor/zh3b.html>`__
+| Datasheet URL:
+  `Link <https://www.winsen-sensor.com/d/files/ZH03B.pdf>`__
 
 Xiaomi: Miflora
 ^^^^^^^^^^^^^^^
 
 | Measurements: EC/Light/Moisture/Temperature
-| Libraries: pypi miflora
+| Dependencies:
+  `libglib2.0-dev <https://packages.debian.org/buster/libglib2.0-dev>`__,
+  `miflora <https://pypi.org/miflora>`__,
+  `btlewrap <https://pypi.org/btlewrap>`__,
+  `bluepy <https://pypi.org/bluepy>`__
 
 I2C Multiplexers
 ~~~~~~~~~~~~~~~~
